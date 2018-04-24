@@ -5,4 +5,5 @@ package com.example.liufan.xiangmu.duanzi.modle;
  */
 
 public interface Modle {
+    void getDZData(String url,int page);
 }
