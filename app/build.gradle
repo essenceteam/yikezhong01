@@ -31,4 +31,18 @@ dependencies {
     compile 'io.reactivex:rxandroid:1.1.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     compile 'com.zhy:autolayout:1.4.5'
+    //导包
+    //fresco
+    compile 'com.facebook.fresco:fresco:0.14.1+'
+    //picasso图片
+    compile 'com.squareup.picasso:picasso:2.5.1'
+    //xrecyclerview
+    compile 'com.jcodecraeer:xrecyclerview:1.3.2'
+    //tablayout 的依赖
+    compile 'com.android.support:design:26+'
+    //banner
+    compile 'com.youth.banner:banner:1.4.9'
+    //butterknife
+    compile 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
 }

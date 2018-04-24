@@ -6,7 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+
+import com.example.liufan.xiangmu.R;
 
 /**
  * Created by liufan on 2018/4/24.
@@ -16,8 +17,7 @@ public class VideoFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        TextView textView =new TextView(getActivity());
-        textView.setText("反反复复付6666");
-        return textView;
+        View view = View.inflate(getActivity(), R.layout.video_frag_view, null);
+        return view;
     }
 }
