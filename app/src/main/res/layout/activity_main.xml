@@ -6,7 +6,30 @@
     android:layout_height="match_parent"
     tools:context="com.example.liufan.xiangmu.MainActivity"
     android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="#3333CC">
+    <ImageView
+        android:id="@+id/head_iv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="left"
+        android:src="@drawable/touxiang"/>
 
+    <TextView
+        android:id="@+id/head_te"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_weight="1" />
+
+    <ImageView
+        android:id="@+id/head_iv1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/raw_1500034665" />
+</LinearLayout>
     <FrameLayout
         android:id="@+id/fl"
         android:layout_width="match_parent"

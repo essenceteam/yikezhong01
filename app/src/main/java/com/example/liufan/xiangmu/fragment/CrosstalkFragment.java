@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.liufan.xiangmu.R;
+
 /**
  * Created by liufan on 2018/4/24.
  */
@@ -16,8 +18,6 @@ public class CrosstalkFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        TextView textView =new TextView(getActivity());
-        textView.setText("反反复复付2222");
-        return textView;
+        return null;
     }
 }
