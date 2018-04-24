@@ -17,6 +17,8 @@ public abstract class BaesActivity extends AutoLayoutActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getlayout());
+        getinit();
+        getdata();
     }
     //获取布局文件
     public abstract int getlayout();
