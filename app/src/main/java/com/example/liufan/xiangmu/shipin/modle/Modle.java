@@ -5,4 +5,5 @@ package com.example.liufan.xiangmu.shipin.modle;
  */
 
 public interface Modle {
+
 }

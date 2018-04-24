@@ -25,9 +25,6 @@ public class CrosstalkFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-<<<<<<< HEAD
-        return null;
-=======
         view = inflater.inflate(R.layout.crosstalk_dz, container, false);
         return view;
     }
@@ -41,8 +38,6 @@ public class CrosstalkFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(OrientationHelper.VERTICAL);
         mXrlv.setLayoutManager(layoutManager);
-
->>>>>>> c02af61b9fd32ae2cbccfab707aa1a813a370906
     }
 }
 
