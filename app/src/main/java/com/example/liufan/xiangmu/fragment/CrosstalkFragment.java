@@ -10,17 +10,23 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.liufan.xiangmu.R;
+import com.example.liufan.xiangmu.adapter.DZFragAdapter;
+import com.example.liufan.xiangmu.duanzi.bean.DZListBean;
+import com.example.liufan.xiangmu.duanzi.view.DuanZiIView;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
-import com.example.liufan.xiangmu.R;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by liufan on 2018/4/24.
  */
 
-public class CrosstalkFragment extends Fragment {
+public class CrosstalkFragment extends Fragment implements DuanZiIView{
 
     private View view;
+    private List<DZListBean.DataBean> list;
+    private XRecyclerView mXrlv;
 
     @Nullable
     @Override
@@ -33,11 +39,28 @@ public class CrosstalkFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         //获取控件
-        XRecyclerView mXrlv=view.findViewById(R.id.xrlv);
+        mXrlv = view.findViewById(R.id.xrlv);
         //设置线性垂直布局管理器
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(OrientationHelper.VERTICAL);
         mXrlv.setLayoutManager(layoutManager);
+    }
+
+    @Override
+    public void dzOnSuccess(DZListBean dzListBean) {
+        list = new ArrayList<>();
+        List<DZListBean.DataBean> data = dzListBean.getData();
+        list.addAll(data);
+        DZFragAdapter dzFragAdapter = new DZFragAdapter(list,getActivity());
+        mXrlv.setAdapter(dzFragAdapter);
+        mXrlv.setLoadingMoreEnabled(true);
+
+
+    }
+
+    @Override
+    public void dzOnFail(String e) {
+
     }
 }
 
