@@ -10,7 +10,7 @@
     android:layout_height="wrap_content"
     android:textSize="30dp"
     android:textColor="#D7DADE"
-    android:text="<"
+    android:text="<1111"
     android:layout_marginLeft="4dp"/>
 <ImageView
     android:layout_width="100dp"

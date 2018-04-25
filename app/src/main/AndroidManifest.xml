@@ -29,7 +29,8 @@
             android:name="design_height"
             android:value="1920" />
 
-        <activity android:name=".activity.QiTaActivity"></activity>
+        <activity android:name=".activity.QiTaActivity" />
+        <activity android:name=".activity.RegisterActivity"></activity>
     </application>
 
 </manifest>
