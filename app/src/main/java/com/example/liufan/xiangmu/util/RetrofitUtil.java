@@ -5,13 +5,9 @@ import android.util.Log;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import java.io.IOException;
-import java.util.Map;
-import java.util.Set;
 
-import okhttp3.Call;
 import okhttp3.FormBody;
 import okhttp3.Interceptor;
-import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
@@ -49,13 +45,13 @@ public class RetrofitUtil {
         });
         httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
-        OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                .addInterceptor(httpLoggingInterceptor)
-                .addInterceptor(new MyInter())
-                .build();
+//        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+//                .addInterceptor(httpLoggingInterceptor)
+//                .addInterceptor(new MyInter())
+//                .build();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(path)
-                .client(okHttpClient)
+//                .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();

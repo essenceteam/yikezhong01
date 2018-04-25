@@ -7,4 +7,5 @@ package com.example.liufan.xiangmu.qita.modle;
 public interface Modle {
     //登录的方法
     void Login(String url,String mobile,String password,Modle1 modle1);
+
 }

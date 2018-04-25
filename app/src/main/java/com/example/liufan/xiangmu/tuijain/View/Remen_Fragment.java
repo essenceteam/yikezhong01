@@ -10,9 +10,11 @@ import android.view.ViewGroup;
 
 import com.example.liufan.xiangmu.R;
 import com.example.liufan.xiangmu.adapter.TuiJian_ReMen_Baseadapter;
+import com.example.liufan.xiangmu.guanz.presenter.Presenter;
+import com.example.liufan.xiangmu.tuijain.View.IView.IView;
+import com.example.liufan.xiangmu.tuijain.modle.Bean.LunBoBean;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.youth.banner.Banner;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -28,6 +30,7 @@ public class Remen_Fragment extends Fragment {
     private View view;
     private View inflate;
     private Banner bann;
+    private com.example.liufan.xiangmu.tuijain.presenter.Presenter presenter;
 
     @Nullable
     @Override
@@ -61,7 +64,18 @@ public class Remen_Fragment extends Fragment {
     }
     //轮播图
     public void getlunbo(){
+        presenter = new com.example.liufan.xiangmu.tuijain.presenter.Presenter ();
+        presenter.getlunbopresenter (new IView.ILunBoView () {
+            @Override
+            public void TuijianOnSuccess(LunBoBean LunBoBean) {
 
+            }
+
+            @Override
+            public void TuijianOnError(Throwable Throwable) {
+
+            }
+        });
 
     }
 }
