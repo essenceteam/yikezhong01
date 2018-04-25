@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:text="<"
+            android:text="111"
             android:textSize="35dp"
             android:textColor="#D7DADE"
             android:layout_width="match_parent"
