@@ -1,6 +1,7 @@
 package com.example.liufan.xiangmu.api;
 
 import com.example.liufan.xiangmu.bean.LoginBean;
+import com.example.liufan.xiangmu.bean.RegisterBean;
 import com.example.liufan.xiangmu.duanzi.bean.DZListBean;
 
 import io.reactivex.Observable;
@@ -13,11 +14,14 @@ import retrofit2.http.Query;
 
 public interface ApiService {
 
-
+   //推荐广告
    @GET("quarter/getJokes")
    Observable<DZListBean> getDzdata(@Query("page") int page);
 
    //登录接口
     @GET("user/login")
     Observable<LoginBean> Login(@Query("mobile") String mobile,@Query("password") String password);
+   //注册接口
+    @GET("quarter/register")
+    Observable<RegisterBean> Register(@Query("regType") String regType, @Query("mobile") String mobile, @Query("password") String password);
 }
