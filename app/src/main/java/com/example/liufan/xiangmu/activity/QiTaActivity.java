@@ -68,6 +68,6 @@ public class QiTaActivity extends BaesActivity implements LoginView{
 
     @Override
     public void ViewLoadSuccess(LoginBean loginBean) {
-
+        //获取登录注册的结果
     }
 }

@@ -1,7 +1,7 @@
 package com.example.liufan.xiangmu.qita.presenter;
 
-import com.example.liufan.xiangmu.activity.LoginActivity;
 import com.example.liufan.xiangmu.activity.QiTaActivity;
+import com.example.liufan.xiangmu.activity.RegisterActivity;
 import com.example.liufan.xiangmu.qita.modle.IModle;
 
 /**
@@ -11,4 +11,6 @@ import com.example.liufan.xiangmu.qita.modle.IModle;
 public interface Presenter {
     //登录的方法
   void Login(IModle iModle, String mobile, String password , QiTaActivity qiTaActivity);
+  //注册的方法
+  void Register(IModle iModle, String mobile, String password , RegisterActivity registerActivity);
 }
