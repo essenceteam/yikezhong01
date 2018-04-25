@@ -71,10 +71,21 @@ public class Remen_Fragment extends Fragment {
     public void getlunbo(){
         presenter = new com.example.liufan.xiangmu.tuijain.presenter.Presenter ();
         presenter.getlunbopresenter (new IView.ILunBoView () {
+
+            private List<LunBoBean.DataBean> data;
+
             @Override
             public void TuijianOnSuccess(LunBoBean LunBoBean) {
-                List<com.example.liufan.xiangmu.tuijain.modle.Bean.LunBoBean.DataBean> data = LunBoBean.getData ();
-                
+                data = LunBoBean.getData ();
+                for (int i = 0; i <data.size () ; i++) {
+                    String icon = data.get (i).getIcon ();
+                    list_tu.add (icon);
+                }
+                bann.setImages (list_tu);
+                bann.setDelayTime (1000);
+
+
+
 
             }
 

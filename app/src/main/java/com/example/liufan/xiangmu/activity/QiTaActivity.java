@@ -1,7 +1,9 @@
 package com.example.liufan.xiangmu.activity;
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.liufan.xiangmu.R;
 import com.example.liufan.xiangmu.baes.BaesActivity;
@@ -16,6 +18,7 @@ public class QiTaActivity extends BaesActivity implements LoginView{
     private EditText mobile_et;
     private EditText password_et;
     private Button login_bt;
+    private TextView login_reg;
 
     @Override
     public int getlayout() {
@@ -30,6 +33,8 @@ public class QiTaActivity extends BaesActivity implements LoginView{
         password_et = findViewById(R.id.password_et);
         //登录按钮
         login_bt = findViewById(R.id.login_bt);
+        //登录页面的注册按钮
+        login_reg = findViewById(R.id.login_reg);
 
     }
 
@@ -45,6 +50,15 @@ public class QiTaActivity extends BaesActivity implements LoginView{
           iPresenter.Login(new IModle(),mobile,password,QiTaActivity.this);
       }
   });
+    //注册的点击事件
+        login_reg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(QiTaActivity.this,RegisterActivity.class);
+                startActivity(intent);
+
+            }
+        });
     }
 
     @Override
@@ -54,6 +68,6 @@ public class QiTaActivity extends BaesActivity implements LoginView{
 
     @Override
     public void ViewLoadSuccess(LoginBean loginBean) {
-
+        //获取登录注册的结果
     }
 }
