@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.liufan.xiangmu.R;
+
 /**
  * Created by liufan on 2018/4/24.
  */
@@ -15,7 +17,7 @@ public class AttentionFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        // View inflate = View.inflate(getContext(), R.layout.fragment1, null);
+         /*View inflate = View.inflate(getContext(), R.layout.login_zhu, null);*/
         return null;
     }
 }

@@ -5,10 +5,12 @@ import com.example.liufan.xiangmu.api.ApiService;
 import com.example.liufan.xiangmu.bean.LoginBean;
 import com.example.liufan.xiangmu.util.RetrofitUtil;
 
-import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.schedulers.Schedulers;
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
+
 
 /**
  * Created by liufan on 2018/4/24.
@@ -24,12 +26,27 @@ public class IModle implements Modle{
         inData = RetrofitUtil.getInData();
          ApiService retrofit = inData.getRetrofit(url, ApiService.class);
          Observable<LoginBean> login = retrofit.Login(mobile, password);
-        login.observeOn(Schedulers.io())
-                .subscribeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Action1<LoginBean>() {
+        login.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<LoginBean>() {
                     @Override
-                    public void call(LoginBean loginBean) {
-                        modle1.okLoadSuccess(loginBean);
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(LoginBean value) {
+                        modle1.okLoadSuccess(value);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        modle1.okLoadError(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
                     }
                 });
     }
