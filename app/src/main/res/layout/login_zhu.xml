@@ -4,22 +4,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/aaaa"
     android:orientation="vertical">
-<<<<<<< HEAD
-<TextView
-    android:id="@+id/huitui_te"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:textSize="30dp"
-    android:textColor="#D7DADE"
-    android:text="<1111"
-    android:layout_marginLeft="4dp"/>
-<ImageView
-    android:layout_width="100dp"
-    android:layout_height="100dp"
-    android:src="@drawable/touxian"
-    android:layout_gravity="center"
-    android:layout_marginTop="40dp" />
-=======
 
     <TextView
         android:id="@+id/huitui_te"
@@ -29,7 +13,6 @@
         android:text="555"
         android:textColor="#D7DADE"
         android:textSize="30dp" />
-
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -37,7 +20,6 @@
         android:layout_marginTop="40dp"
         android:src="@drawable/touxian" />
 
->>>>>>> fafbd418a14f056555025eaca630d1addbce1467
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
