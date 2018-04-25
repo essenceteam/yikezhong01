@@ -15,6 +15,10 @@ import com.example.liufan.xiangmu.tuijain.View.IView.IView;
 import com.example.liufan.xiangmu.tuijain.modle.Bean.LunBoBean;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.youth.banner.Banner;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -31,6 +35,7 @@ public class Remen_Fragment extends Fragment {
     private View inflate;
     private Banner bann;
     private com.example.liufan.xiangmu.tuijain.presenter.Presenter presenter;
+    List<String> list_tu = new ArrayList<> ();
 
     @Nullable
     @Override
@@ -68,6 +73,8 @@ public class Remen_Fragment extends Fragment {
         presenter.getlunbopresenter (new IView.ILunBoView () {
             @Override
             public void TuijianOnSuccess(LunBoBean LunBoBean) {
+                List<com.example.liufan.xiangmu.tuijain.modle.Bean.LunBoBean.DataBean> data = LunBoBean.getData ();
+                
 
             }
 
