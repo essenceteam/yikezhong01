@@ -3,6 +3,7 @@ package com.example.liufan.xiangmu.qita.modle;
 import com.example.liufan.xiangmu.api.API;
 import com.example.liufan.xiangmu.api.ApiService;
 import com.example.liufan.xiangmu.bean.LoginBean;
+import com.example.liufan.xiangmu.bean.RegisterBean;
 import com.example.liufan.xiangmu.util.RetrofitUtil;
 
 import io.reactivex.Observable;
@@ -25,7 +26,7 @@ public class IModle implements Modle{
     public void Login(String url, String mobile, String password, final Modle1 modle1) {
         inData = RetrofitUtil.getInData();
          ApiService retrofit = inData.getRetrofit(url, ApiService.class);
-         Observable<LoginBean> login = retrofit.Login(mobile, password);
+         Observable<LoginBean> login = retrofit.Login("android",mobile, password);
         login.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<LoginBean>() {
@@ -42,6 +43,36 @@ public class IModle implements Modle{
                     @Override
                     public void onError(Throwable e) {
                         modle1.okLoadError(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+//注册的方法
+    @Override
+    public void Register(String url, String mobile, String password, final Modle2 modle2) {
+        inData = RetrofitUtil.getInData();
+        ApiService retrofit = inData.getRetrofit(url, ApiService.class);
+         Observable<RegisterBean> register = retrofit.Register("android","0", mobile, password);
+         register.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<RegisterBean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(RegisterBean value) {
+                        modle2.okLoadSuccess(value);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        modle2.okLoadError(e.getMessage());
                     }
 
                     @Override
