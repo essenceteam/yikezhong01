@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.example.liufan.xiangmu.R;
 import com.example.liufan.xiangmu.baes.BaesActivity;
@@ -20,6 +21,7 @@ public class MainActivity extends BaesActivity {
     private VideoFragment videoFragment;
     private AttentionFragment attentionFragment;
     private CrosstalkFragment crosstalkFragment;
+    private TextView head_te;
 
     @Override
     public int getlayout() {
@@ -29,6 +31,7 @@ public class MainActivity extends BaesActivity {
     @Override
     public void getinit() {
         rg = findViewById(R.id.rg);
+        head_te = findViewById(R.id.head_te);
     }
 
     @Override
@@ -46,6 +49,7 @@ public class MainActivity extends BaesActivity {
                     case R.id.rb1:
                         //推荐
                         supportFragmentManager.beginTransaction().show(recommendFragment).commit();
+                        head_te.setText("推荐");
                         break;
                     case R.id.rb2:
                         //段子
@@ -55,6 +59,7 @@ public class MainActivity extends BaesActivity {
                         }else {
                             supportFragmentManager.beginTransaction().show(crosstalkFragment).commit();
                         }
+                        head_te.setText("段子");
                         break;
                     case R.id.rb3:
                         //视频
@@ -64,6 +69,7 @@ public class MainActivity extends BaesActivity {
                         }else {
                             supportFragmentManager.beginTransaction().show(videoFragment).commit();
                         }
+                        head_te.setText("视频");
                         break;
                     case R.id.rb4:
                         //关注
@@ -73,6 +79,7 @@ public class MainActivity extends BaesActivity {
                         }else {
                             supportFragmentManager.beginTransaction().show(attentionFragment).commit();
                         }
+                        head_te.setText("关注");
                         break;
                 }
             }
