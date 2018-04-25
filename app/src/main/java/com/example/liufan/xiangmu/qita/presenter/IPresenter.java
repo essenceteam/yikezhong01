@@ -20,7 +20,8 @@ public class IPresenter implements Presenter{
             }
 
             @Override
-            public void okLoadSuccess(LoginBean loginBean) {
+            public void okLoadSuccess(Object object) {
+                LoginBean loginBean = (LoginBean) object;
                 loginActivity.ViewLoadSuccess(loginBean);
             }
         });
