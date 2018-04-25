@@ -20,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
         android:gravity="bottom"
         >
     <Button
@@ -27,13 +28,14 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:background="@drawable/weixin1"
-        android:layout_marginLeft="150dp"/>
+        android:layout_gravity="center_horizontal"
+        />
     <Button
         android:id="@+id/QQ_bt"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:background="@drawable/qq1"
-        android:layout_marginLeft="150dp"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="5dp"/>
         <TextView
             android:id="@+id/qita_te"

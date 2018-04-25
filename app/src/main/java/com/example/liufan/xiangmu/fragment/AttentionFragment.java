@@ -17,7 +17,7 @@ public class AttentionFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-         /*View inflate = View.inflate(getContext(), R.layout.login_zhu, null);*/
-        return null;
+         View inflate = View.inflate(getContext(), R.layout.login_zhu, null);
+        return inflate;
     }
 }
