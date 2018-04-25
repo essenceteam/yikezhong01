@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 
 import com.example.liufan.xiangmu.R;
 import com.example.liufan.xiangmu.adapter.ViewPagerAdapter;
-import com.example.liufan.xiangmu.shipin.Video_Fujin;
-import com.example.liufan.xiangmu.shipin.Video_Remen;
+import com.example.liufan.xiangmu.shipin.view.Video_Fujin;
+import com.example.liufan.xiangmu.shipin.view.Video_Remen;
 
 import java.util.ArrayList;
 import java.util.List;

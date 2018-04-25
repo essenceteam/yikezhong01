@@ -1,4 +1,4 @@
-package com.example.liufan.xiangmu.shipin;
+package com.example.liufan.xiangmu.shipin.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
