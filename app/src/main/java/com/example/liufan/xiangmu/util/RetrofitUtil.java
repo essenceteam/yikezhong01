@@ -8,6 +8,7 @@ import java.io.IOException;
 
 import okhttp3.FormBody;
 import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
@@ -45,13 +46,12 @@ public class RetrofitUtil {
         });
         httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
-//        OkHttpClient okHttpClient = new OkHttpClient.Builder()
-//                .addInterceptor(httpLoggingInterceptor)
-//                .addInterceptor(new MyInter())
-//                .build();
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .addInterceptor(httpLoggingInterceptor)
+                .build();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(path)
-//                .client(okHttpClient)
+                .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();

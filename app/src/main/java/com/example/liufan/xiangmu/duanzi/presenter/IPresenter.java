@@ -2,31 +2,28 @@ package com.example.liufan.xiangmu.duanzi.presenter;
 
 import com.example.liufan.xiangmu.duanzi.bean.DZListBean;
 import com.example.liufan.xiangmu.duanzi.modle.IModle;
-import com.example.liufan.xiangmu.duanzi.modle.ModelSF;
-import com.example.liufan.xiangmu.duanzi.modle.Modle;
 import com.example.liufan.xiangmu.duanzi.view.DuanZiIView;
 
 /**
  * Created by liufan on 2018/4/24.
  */
 
-public class IPresenter implements Presenter {
+public class IPresenter {
 
-    private Modle modle;
     private DuanZiIView duanZiIView;
+    private IModle modle;
 
     public IPresenter(DuanZiIView duanZiIView) {
         this.duanZiIView = duanZiIView;
         modle=new IModle();
     }
 
-    @Override
-    public void getDZData(String url, int page, ModelSF modelSF) {
-        modle.getDZData(url, page, new ModelSF() {
+    public void getDZdata(String url,int page){
+        modle.getDZData(url, page);
+        modle.setCallbackData(new IModle.CallbackData() {
             @Override
-            public void onSuccess(Object object) {
-                DZListBean dzListBean= (DZListBean) object;
-                duanZiIView.dzOnSuccess(dzListBean);
+            public void setDZdata(DZListBean dZdata) {
+                duanZiIView.dzOnSuccess(dZdata);
             }
 
             @Override
@@ -34,5 +31,8 @@ public class IPresenter implements Presenter {
                 duanZiIView.dzOnFail(e);
             }
         });
+
     }
+
+
 }
