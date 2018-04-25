@@ -5,4 +5,6 @@ package com.example.liufan.xiangmu.duanzi.presenter;
  */
 
 public interface Presenter {
+
+
 }
