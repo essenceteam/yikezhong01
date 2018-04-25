@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/aaaa"
     android:orientation="vertical">
+<<<<<<< HEAD
 <TextView
     android:id="@+id/huitui_te"
     android:layout_width="match_parent"
@@ -18,35 +19,55 @@
     android:src="@drawable/touxian"
     android:layout_gravity="center"
     android:layout_marginTop="40dp" />
+=======
+
+    <TextView
+        android:id="@+id/huitui_te"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:text="555"
+        android:textColor="#D7DADE"
+        android:textSize="30dp" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/touxian" />
+
+>>>>>>> fafbd418a14f056555025eaca630d1addbce1467
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:layout_gravity="center_horizontal"
         android:gravity="bottom"
-        >
-    <Button
-        android:id="@+id/wx_bt"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/weixin1"
-        android:layout_gravity="center_horizontal"
-        />
-    <Button
-        android:id="@+id/QQ_bt"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/qq1"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="5dp"/>
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/wx_bt"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/weixin1" />
+
+        <Button
+            android:id="@+id/QQ_bt"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/qq1" />
+
         <TextView
             android:id="@+id/qita_te"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
             android:text="其他方式登录"
             android:textColor="#BEBBB5"
-            android:textSize="15dp"
-            android:gravity="center"
-            android:layout_marginTop="15dp"/>
+            android:textSize="15dp" />
     </LinearLayout>
 </LinearLayout>

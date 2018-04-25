@@ -5,13 +5,16 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.liufan.xiangmu.R;
 import com.example.liufan.xiangmu.adapter.DZFragAdapter;
+import com.example.liufan.xiangmu.api.API;
 import com.example.liufan.xiangmu.duanzi.bean.DZListBean;
+import com.example.liufan.xiangmu.duanzi.presenter.IPresenter;
 import com.example.liufan.xiangmu.duanzi.view.DuanZiIView;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
@@ -24,14 +27,18 @@ import java.util.List;
 
 public class CrosstalkFragment extends Fragment implements DuanZiIView{
 
+    private int page=1;
     private View view;
     private List<DZListBean.DataBean> list;
     private XRecyclerView mXrlv;
+    private IPresenter iPresenter;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.crosstalk_dz, container, false);
+        iPresenter = new IPresenter(this);
+        iPresenter.getDZData(API.Url,page,null);
         return view;
     }
 
@@ -48,6 +55,8 @@ public class CrosstalkFragment extends Fragment implements DuanZiIView{
 
     @Override
     public void dzOnSuccess(DZListBean dzListBean) {
+        String code = dzListBean.getCode();
+        Log.d("CrosstalkFragment", code);
         list = new ArrayList<>();
         List<DZListBean.DataBean> data = dzListBean.getData();
         list.addAll(data);
@@ -60,7 +69,7 @@ public class CrosstalkFragment extends Fragment implements DuanZiIView{
 
     @Override
     public void dzOnFail(String e) {
-
+        Log.d("CrosstalkFragment", e.toString());
     }
 }
 
