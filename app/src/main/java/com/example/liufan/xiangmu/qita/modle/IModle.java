@@ -26,7 +26,7 @@ public class IModle implements Modle{
     public void Login(String url, String mobile, String password, final Modle1 modle1) {
         inData = RetrofitUtil.getInData();
          ApiService retrofit = inData.getRetrofit(url, ApiService.class);
-         Observable<LoginBean> login = retrofit.Login(mobile, password);
+         Observable<LoginBean> login = retrofit.Login("android",mobile, password);
         login.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<LoginBean>() {
@@ -56,7 +56,7 @@ public class IModle implements Modle{
     public void Register(String url, String mobile, String password, final Modle2 modle2) {
         inData = RetrofitUtil.getInData();
         ApiService retrofit = inData.getRetrofit(url, ApiService.class);
-         Observable<RegisterBean> register = retrofit.Register("0", mobile, password);
+         Observable<RegisterBean> register = retrofit.Register("android","0", mobile, password);
          register.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<RegisterBean>() {

@@ -20,8 +20,8 @@ public interface ApiService {
 
    //登录接口
     @GET("user/login")
-    Observable<LoginBean> Login(@Query("mobile") String mobile,@Query("password") String password);
+    Observable<LoginBean> Login(@Query("source") String android,@Query("mobile") String mobile,@Query("password") String password);
    //注册接口
     @GET("quarter/register")
-    Observable<RegisterBean> Register(@Query("regType") String regType, @Query("mobile") String mobile, @Query("password") String password);
+    Observable<RegisterBean> Register(@Query("source") String android,@Query("regType") String regType, @Query("mobile") String mobile, @Query("password") String password);
 }
