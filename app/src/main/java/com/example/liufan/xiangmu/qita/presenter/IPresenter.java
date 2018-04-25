@@ -1,6 +1,5 @@
 package com.example.liufan.xiangmu.qita.presenter;
 
-import com.example.liufan.xiangmu.activity.LoginActivity;
 import com.example.liufan.xiangmu.activity.QiTaActivity;
 import com.example.liufan.xiangmu.api.API;
 import com.example.liufan.xiangmu.bean.LoginBean;
@@ -21,14 +20,10 @@ public class IPresenter implements Presenter{
             }
 
             @Override
-<<<<<<< HEAD
-            public void okLoadSuccess(LoginBean loginBean) {
-                qiTaActivity.ViewLoadSuccess(loginBean);
-=======
+
             public void okLoadSuccess(Object object) {
                 LoginBean loginBean = (LoginBean) object;
-                loginActivity.ViewLoadSuccess(loginBean);
->>>>>>> c926d1313329ba63c4040982b6396317aec6d5a9
+                qiTaActivity.ViewLoadSuccess(loginBean);
             }
         });
     }

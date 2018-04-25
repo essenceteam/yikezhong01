@@ -23,7 +23,6 @@ public class DZFragAdapter extends RecyclerView.Adapter<DZFragAdapter.DZviewHold
 
     List<DZListBean.DataBean> list;
     Context context;
-    private View view;
 
     public DZFragAdapter(List<DZListBean.DataBean> list, Context context) {
         this.list = list;
@@ -32,7 +31,8 @@ public class DZFragAdapter extends RecyclerView.Adapter<DZFragAdapter.DZviewHold
 
     @Override
     public DZviewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        view = LayoutInflater.from(context).inflate(R.layout.dzadapter, null);
+
+        View  view = LayoutInflater.from(context).inflate(R.layout.dzadapter, null);
         DZviewHolder holder = new DZviewHolder(view);
         return holder;
     }
@@ -56,7 +56,7 @@ public class DZFragAdapter extends RecyclerView.Adapter<DZFragAdapter.DZviewHold
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return list.size()<1?0:list.size();
     }
 
     class DZviewHolder extends RecyclerView.ViewHolder{

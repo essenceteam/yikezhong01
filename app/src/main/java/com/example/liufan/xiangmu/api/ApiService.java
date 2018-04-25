@@ -15,7 +15,7 @@ public interface ApiService {
 
 
    @GET("quarter/getJokes")
-   Observable<DZListBean> getDzdata(@Query("page") int page);
+   Observable<DZListBean> getDzdata(@Query("source") String android,@Query("appVersion") String version,@Query("page") String page);
 
    //登录接口
     @GET("user/login")
