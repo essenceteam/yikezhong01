@@ -48,13 +48,12 @@ public class Remen_Fragment extends Fragment {
         unbinder = ButterKnife.bind (this, view);
         inflate = View.inflate (getActivity (), R.layout.bann_layout, null);
         remenrev1.addHeaderView (inflate);
-        bann = this.inflate.findViewById (R.id.bann);
+        bann = inflate.findViewById (R.id.bann);
         getlunbo();
         getdata1();
         //TuiJian_ReMen_Baseadapter TuiJian_ReMen_Baseadapter=new TuiJian_ReMen_Baseadapter ();
         //remenrev1.setAdapter (TuiJian_ReMen_Baseadapter);
-
-        return this.view;
+        return view;
     }
     //上啦刷新，下拉加载
     private void getdata1() {
@@ -81,9 +80,7 @@ public class Remen_Fragment extends Fragment {
     public void getlunbo(){
         Presenter Presenter=new Presenter ();
         Presenter.getlunbopresenter (new ItuijianView() {
-
             private List<LunBoBean.DataBean> data;
-
             @Override
             public void TuijianOnSuccess(LunBoBean LunBoBean) {
                 data = LunBoBean.getData ();

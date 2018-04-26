@@ -5,13 +5,10 @@
     >
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
         <com.jcodecraeer.xrecyclerview.XRecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/remenrev1"
-            />
-
+            android:id="@+id/remenrev1" />
     </ScrollView>
 </LinearLayout>
