@@ -9,11 +9,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-<<<<<<< HEAD
-            android:text="111"
-=======
             android:text="6666"
->>>>>>> e6510ef3994965cac763fc05517f91b5f6041406
             android:textSize="35dp"
             android:textColor="#D7DADE"
             android:layout_width="match_parent"

@@ -21,6 +21,8 @@ import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.http.HEAD;
+
 /**
  * Created by liufan on 2018/4/24.
  */
@@ -38,11 +40,7 @@ public class CrosstalkFragment extends Fragment implements DuanZiIView{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.crosstalk_dz, container, false);
         iPresenter = new IPresenter(this);
-<<<<<<< HEAD
-        iPresenter.getDZData(API.Url,page,null);
-=======
-        iPresenter.getDZdata(API.Url,page);
->>>>>>> e6510ef3994965cac763fc05517f91b5f6041406
+        iPresenter.getDZData(API.Url,"101",page,this);
         return view;
     }
 
@@ -61,10 +59,9 @@ public class CrosstalkFragment extends Fragment implements DuanZiIView{
     public void dzOnSuccess(DZListBean dzListBean) {
         String code = dzListBean.getCode();
         Log.d("CrosstalkFragment", code);
-<<<<<<< HEAD
+
         list = new ArrayList<>();
-=======
->>>>>>> e6510ef3994965cac763fc05517f91b5f6041406
+
         List<DZListBean.DataBean> data = dzListBean.getData();
         DZFragAdapter dzFragAdapter = new DZFragAdapter(data,getActivity());
         mXrlv.setAdapter(dzFragAdapter);
