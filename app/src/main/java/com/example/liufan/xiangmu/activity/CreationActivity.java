@@ -1,8 +1,10 @@
 package com.example.liufan.xiangmu.activity;
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.liufan.xiangmu.MainActivity;
 import com.example.liufan.xiangmu.R;
 import com.example.liufan.xiangmu.baes.BaesActivity;
 
@@ -46,7 +48,10 @@ public class CreationActivity extends BaesActivity implements View.OnClickListen
             //跳转到段子的点击事件
             case R.id.wenb_iv:
                 break;
+                //回退到上一个页面
             case R.id.qx_te:
+                Intent intent = new Intent (CreationActivity.this, MainActivity.class);
+                startActivity (intent);
                 break;
 
         }
