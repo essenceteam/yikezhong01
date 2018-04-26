@@ -40,11 +40,7 @@ public class CrosstalkFragment extends Fragment implements DuanZiIView{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.crosstalk_dz, container, false);
         iPresenter = new IPresenter(this);
-<<<<<<< HEAD
-        iPresenter.getDZdata(API.Url,page);
-=======
-        iPresenter.getDZData(API.Url,"101",page,this);
->>>>>>> 78aa9213492c7aba2974828d9f07baede19bea5d
+             iPresenter.getDZdata(API.Url,page);
         return view;
     }
 
@@ -63,13 +59,9 @@ public class CrosstalkFragment extends Fragment implements DuanZiIView{
     public void dzOnSuccess(DZListBean dzListBean) {
         String code = dzListBean.getCode();
         Log.d("CrosstalkFragment", code);
-<<<<<<< HEAD
         list = new ArrayList<>();
-=======
-
         list = new ArrayList<>();
 
->>>>>>> 78aa9213492c7aba2974828d9f07baede19bea5d
         List<DZListBean.DataBean> data = dzListBean.getData();
         DZFragAdapter dzFragAdapter = new DZFragAdapter(data,getActivity());
         mXrlv.setAdapter(dzFragAdapter);

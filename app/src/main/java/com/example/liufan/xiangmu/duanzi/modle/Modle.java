@@ -5,5 +5,5 @@ package com.example.liufan.xiangmu.duanzi.modle;
  */
 
 public interface Modle {
-    void getDZData(String url,String version,int page ,ModelSF modelSF);
+   // void getDZData(String url,String version,int page ,ModelSF modelSF);
 }
