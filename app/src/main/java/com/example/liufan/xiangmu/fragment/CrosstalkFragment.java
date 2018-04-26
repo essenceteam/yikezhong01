@@ -57,6 +57,7 @@ public class CrosstalkFragment extends Fragment implements DuanZiIView{
     public void dzOnSuccess(DZListBean dzListBean) {
         String code = dzListBean.getCode();
         Log.d("CrosstalkFragment", code);
+        list = new ArrayList<>();
         List<DZListBean.DataBean> data = dzListBean.getData();
         DZFragAdapter dzFragAdapter = new DZFragAdapter(data,getActivity());
         mXrlv.setAdapter(dzFragAdapter);

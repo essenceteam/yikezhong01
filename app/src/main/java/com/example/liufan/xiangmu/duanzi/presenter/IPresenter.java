@@ -4,9 +4,8 @@ import com.example.liufan.xiangmu.duanzi.bean.DZListBean;
 import com.example.liufan.xiangmu.duanzi.modle.IModle;
 import com.example.liufan.xiangmu.duanzi.view.DuanZiIView;
 
-/**
- * Created by liufan on 2018/4/24.
- */
+
+
 
 public class IPresenter {
 
@@ -17,6 +16,7 @@ public class IPresenter {
         this.duanZiIView = duanZiIView;
         modle=new IModle();
     }
+
 
     public void getDZdata(String url,int page){
         modle.getDZData(url, page);
@@ -31,8 +31,9 @@ public class IPresenter {
                 duanZiIView.dzOnFail(e);
             }
         });
-
     }
+
+
 
 
 }

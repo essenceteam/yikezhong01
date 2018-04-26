@@ -16,6 +16,8 @@ import io.reactivex.schedulers.Schedulers;
 public class IModle {
 
 
+
+
     private CallbackData callbackData;
      public interface CallbackData {
          void setDZdata(DZListBean dZdata);
