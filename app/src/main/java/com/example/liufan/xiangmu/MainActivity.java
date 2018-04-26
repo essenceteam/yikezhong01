@@ -1,13 +1,16 @@
 package com.example.liufan.xiangmu;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.liufan.xiangmu.R;
+import com.example.liufan.xiangmu.activity.CreationActivity;
 import com.example.liufan.xiangmu.baes.BaesActivity;
 import com.example.liufan.xiangmu.fragment.AttentionFragment;
 import com.example.liufan.xiangmu.fragment.CrosstalkFragment;
@@ -22,6 +25,7 @@ public class MainActivity extends BaesActivity {
     private AttentionFragment attentionFragment;
     private CrosstalkFragment crosstalkFragment;
     private TextView head_te;
+    private ImageView head_iv1;
 
     @Override
     public int getlayout() {
@@ -32,6 +36,7 @@ public class MainActivity extends BaesActivity {
     public void getinit() {
         rg = findViewById(R.id.rg);
         head_te = findViewById(R.id.head_te);
+        head_iv1 = findViewById(R.id.head_iv1);
     }
 
     @Override
@@ -82,6 +87,14 @@ public class MainActivity extends BaesActivity {
                         head_te.setText("关注");
                         break;
                 }
+            }
+        });
+        //创作的点击事件
+        head_iv1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CreationActivity.class);
+                startActivity(intent);
             }
         });
     }
