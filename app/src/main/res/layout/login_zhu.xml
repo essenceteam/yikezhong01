@@ -5,14 +5,13 @@
     android:background="@drawable/aaaa"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/huitui_te"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/huitui_iv"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginLeft="4dp"
-        android:text="555"
-        android:textColor="#D7DADE"
-        android:textSize="30dp" />
+        android:src="@drawable/left_jt"
+         />
 
     <ImageView
         android:layout_width="100dp"

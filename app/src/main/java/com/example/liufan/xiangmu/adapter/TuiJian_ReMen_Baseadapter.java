@@ -14,9 +14,6 @@ import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import java.util.List;
 
-import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
-import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
-
 /**
  * Created by lenovo on 2018/4/25.
  */
@@ -54,7 +51,7 @@ public class TuiJian_ReMen_Baseadapter extends XRecyclerView.Adapter<TuiJian_ReM
             TextView username = itemView.findViewById (R.id.username);
             TextView usertime = itemView.findViewById (R.id.usertime);
             ImageView zidingyi = itemView.findViewById (R.id.zidingyi);
-            JCVideoPlayerStandard player_list_tuijian = itemView.findViewById (R.id.player_list_tuijian);
+//            JCVideoPlayerStandard player_list_tuijian = itemView.findViewById (R.id.player_list_tuijian);
            // player_list_tuijian.setUp ("", JCVideoPlayer.SCREEN_LAYOUT_LIST,"");
         }
     }
