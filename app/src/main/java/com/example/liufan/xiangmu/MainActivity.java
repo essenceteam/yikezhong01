@@ -111,6 +111,7 @@ public class MainActivity extends BaesActivity {
             }
         });
 
+        //点击头像跳转登录也
         sDraw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
