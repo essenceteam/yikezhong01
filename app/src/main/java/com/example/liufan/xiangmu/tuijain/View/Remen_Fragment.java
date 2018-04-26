@@ -12,8 +12,8 @@ import android.widget.ImageView;
 
 import com.example.liufan.xiangmu.R;
 import com.example.liufan.xiangmu.adapter.TuiJian_ReMen_Baseadapter;
-import com.example.liufan.xiangmu.tuijain.View.Iview.IView;
 import com.example.liufan.xiangmu.tuijain.modle.Bean.LunBoBean;
+import com.example.liufan.xiangmu.tuijain.View.Iview.IView;
 import com.example.liufan.xiangmu.tuijain.presenter.Presenter;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.squareup.picasso.Picasso;

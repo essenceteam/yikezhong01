@@ -37,16 +37,11 @@ public class IPresenter implements Presenter {
         iModle.Register(API.Url, mobile, password, new Modle2() {
             @Override
             public void okLoadError(String ss) {
-                registerActivity.RegisterError(ss);
+                  registerActivity.RegisterError(ss);
             }
-
             @Override
             public void okLoadSuccess(Object object) {
                 registerActivity.RegisterSuccess((RegisterBean) object);
-<<<<<<< HEAD
-
-=======
->>>>>>> 3f44c3e17d48f03de1b78b07ce478371f39a003c
             }
         });
     }
