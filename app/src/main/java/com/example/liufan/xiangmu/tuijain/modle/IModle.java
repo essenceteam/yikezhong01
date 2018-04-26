@@ -1,14 +1,10 @@
 package com.example.liufan.xiangmu.tuijain.modle;
 
 import android.util.Log;
-
 import com.example.liufan.xiangmu.api.API;
 import com.example.liufan.xiangmu.api.ApiService;
 import com.example.liufan.xiangmu.tuijain.modle.Bean.LunBoBean;
 import com.example.liufan.xiangmu.util.RetrofitUtil;
-
-import java.lang.reflect.AnnotatedElement;
-
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;

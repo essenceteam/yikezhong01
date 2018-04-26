@@ -1,4 +1,4 @@
-package com.example.liufan.xiangmu.tuijain.View;
+package com.example.liufan.xiangmu.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
