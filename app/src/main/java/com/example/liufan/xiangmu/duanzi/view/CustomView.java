@@ -77,14 +77,14 @@ public class CustomView extends RelativeLayout {
     public void showMenu() {
         //三个平移动画 平移出来
         ObjectAnimator firstAnimator = ObjectAnimator.ofFloat(image_pingbi
-                , "translationX", 0, -65 * 9/2);
+                , "translationX", 0, -30 * 3);
         ObjectAnimator secondAnimator = ObjectAnimator.ofFloat(image_copy
-                , "translationX", 0, -65 * 3);
+                , "translationX", 0, -30 * 2);
         ObjectAnimator thirdAnimator = ObjectAnimator.ofFloat(image_report
-                , "translationX", 0, -65 * 3/2);
+                , "translationX", 0, -30 * 1);
 
         //旋转动画
-        ObjectAnimator rotation1 = ObjectAnimator.ofFloat(image_jian, "rotation", 0, 135, 0);
+        ObjectAnimator rotation1 = ObjectAnimator.ofFloat(image_jian, "rotation", 0, 180, 0);
         ObjectAnimator rotation2 = ObjectAnimator.ofFloat(image_report, "rotation", 0, 180, 0);
         ObjectAnimator rotation3 = ObjectAnimator.ofFloat(image_copy, "rotation", 0, 180, 0);
         ObjectAnimator rotation4 = ObjectAnimator.ofFloat(image_pingbi, "rotation", 0, 180, 0);
@@ -108,7 +108,7 @@ public class CustomView extends RelativeLayout {
                 , "translationX", image_copy.getTranslationX(), 0);
         ObjectAnimator thirdAnimator = ObjectAnimator.ofFloat(image_report
                 , "translationX", image_pingbi.getTranslationX(), 0);
-        ObjectAnimator rotation1 = ObjectAnimator.ofFloat(image_show, "rotation", 0, 135, 0);
+        ObjectAnimator rotation1 = ObjectAnimator.ofFloat(image_show, "rotation", 0, 180, 0);
         ObjectAnimator rotation2 = ObjectAnimator.ofFloat(image_copy, "rotation", 0, 180, 0);
         ObjectAnimator rotation3 = ObjectAnimator.ofFloat(image_pingbi, "rotation", 0, 180, 0);
         ObjectAnimator rotation4 = ObjectAnimator.ofFloat(image_report, "rotation", 0, 180, 0);
