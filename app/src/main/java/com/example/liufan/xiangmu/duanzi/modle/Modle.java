@@ -1,9 +1,0 @@
-package com.example.liufan.xiangmu.duanzi.modle;
-
-/**
- * Created by liufan on 2018/4/24.
- */
-
-public interface Modle {
-    void getDZData(String url,int page ,ModelSF modelSF);
-}
