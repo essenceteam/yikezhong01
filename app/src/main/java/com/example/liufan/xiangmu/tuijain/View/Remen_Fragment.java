@@ -70,10 +70,8 @@ public class Remen_Fragment extends Fragment {
     //轮播图
     public void getlunbo(){
         presenter = new com.example.liufan.xiangmu.tuijain.presenter.Presenter ();
-        presenter.getlunbopresenter (new IView.ILunBoView () {
-
+        presenter.getlunbopresenter (new IView () {
             private List<LunBoBean.DataBean> data;
-
             @Override
             public void TuijianOnSuccess(LunBoBean LunBoBean) {
                 data = LunBoBean.getData ();
@@ -83,10 +81,6 @@ public class Remen_Fragment extends Fragment {
                 }
                 bann.setImages (list_tu);
                 bann.setDelayTime (1000);
-
-
-
-
             }
 
             @Override
