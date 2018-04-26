@@ -44,7 +44,6 @@ public class Video_Remen extends Fragment implements Video_OnView {
         //https://www.zhaoapi.cn/quarter/getVideos?source=android&appVersion=101&type=1&page=1
         video_presenter = new Video_Presenter(this);
         video_presenter.getVideo_HQSP("android","101","1",pager+"");
-
         video_remen_xrecy.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
@@ -86,7 +85,6 @@ public class Video_Remen extends Fragment implements Video_OnView {
         //适配器
         video_remen_adapter = new Video_ReMen_Adapter(getActivity(),data1);
         video_remen_xrecy.setAdapter(video_remen_adapter);
-
         video_remen_adapter.onItemClick(new Video_ReMen_Adapter.Itemclick() {
             @Override
             public void itemclick(View view, int position) {

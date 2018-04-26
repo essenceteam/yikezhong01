@@ -3,6 +3,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.liufan.xiangmu.R;
@@ -19,6 +20,7 @@ public class QiTaActivity extends BaesActivity implements LoginView{
     private EditText password_et;
     private Button login_bt;
     private TextView login_reg;
+    private ImageView fanhui;
 
     @Override
     public int getlayout() {
@@ -35,6 +37,7 @@ public class QiTaActivity extends BaesActivity implements LoginView{
         login_bt = findViewById(R.id.login_bt);
         //登录页面的注册按钮
         login_reg = findViewById(R.id.login_reg);
+        fanhui = findViewById(R.id.fanhui);
 
     }
 
@@ -57,6 +60,12 @@ public class QiTaActivity extends BaesActivity implements LoginView{
                 Intent intent =new Intent(QiTaActivity.this,RegisterActivity.class);
                 startActivity(intent);
 
+            }
+        });
+        fanhui.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
