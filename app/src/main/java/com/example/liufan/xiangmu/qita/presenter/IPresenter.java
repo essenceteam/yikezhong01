@@ -24,15 +24,22 @@ public class IPresenter implements Presenter {
             }
 
             @Override
+<<<<<<< HEAD
 
             public void okLoadSuccess(Object object) {
                 LoginBean loginBean = (LoginBean) object;
                 qiTaActivity.ViewLoadSuccess(loginBean);
             }
+=======
+            public void okLoadSuccess(Object object) {
+                LoginBean loginBean = (LoginBean) object;
+                qiTaActivity.ViewLoadSuccess(loginBean);
+>>>>>>> 78aa9213492c7aba2974828d9f07baede19bea5d
 
-        });
+        }
+
+    });
     }
-
     //注册的方法
     @Override
     public void Register(IModle iModle, String mobile, String password, final RegisterActivity registerActivity) {
@@ -45,6 +52,10 @@ public class IPresenter implements Presenter {
             @Override
             public void okLoadSuccess(Object object) {
                 registerActivity.RegisterSuccess((RegisterBean) object);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 78aa9213492c7aba2974828d9f07baede19bea5d
             }
         });
     }

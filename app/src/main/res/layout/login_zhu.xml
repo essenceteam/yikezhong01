@@ -13,6 +13,10 @@
         android:text="555"
         android:textColor="#D7DADE"
         android:textSize="30dp" />
+<<<<<<< HEAD
+
+=======
+>>>>>>> d092d8bb9f4f729f6f8321f09679734d09eef232
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
