@@ -51,8 +51,10 @@ public class TuiJian_ReMen_Baseadapter extends XRecyclerView.Adapter<TuiJian_ReM
             TextView username = itemView.findViewById (R.id.username);
             TextView usertime = itemView.findViewById (R.id.usertime);
             ImageView zidingyi = itemView.findViewById (R.id.zidingyi);
+
 //            JCVideoPlayerStandard player_list_tuijian = itemView.findViewById (R.id.player_list_tuijian);
            // player_list_tuijian.setUp ("", JCVideoPlayer.SCREEN_LAYOUT_LIST,"");
+
         }
     }
 }
