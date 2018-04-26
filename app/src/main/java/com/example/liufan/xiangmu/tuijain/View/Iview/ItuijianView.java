@@ -1,6 +1,5 @@
-package com.example.liufan.xiangmu.tuijain.View.Iview;
+package com.example.liufan.xiangmu.tuijain.view.Iview;
 import com.example.liufan.xiangmu.tuijain.modle.Bean.LunBoBean;
-
 /**
  *
  */
