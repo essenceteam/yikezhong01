@@ -21,7 +21,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class IModle {
     //轮播图
-    public void  getlunbo(final Modle.Ilunbo Ilunbo){
+    public void  getlunbo(final Modle IModle){
         RetrofitUtil data = RetrofitUtil.getInData ();
         ApiService retrofit = data.getRetrofit (API.Url, ApiService.class);
         Observable<LunBoBean> getlunbo = retrofit.getlunbo ();
@@ -36,8 +36,8 @@ public class IModle {
                     @Override
                     public void onNext(LunBoBean value) {
                         Log.i ("轮播图",value.getMsg ());
-                        if(Ilunbo!=null){
-                            Ilunbo.TuijianOnSuccess (value);
+                        if(IModle!=null){
+                            IModle.TuijianOnSuccess (value);
                         }
 
                     }
@@ -45,7 +45,7 @@ public class IModle {
                     @Override
                     public void onError(Throwable e) {
                         Log.i ("轮播图",e.getMessage ());
-                        Ilunbo.TuijianOnError (e);
+                        IModle.TuijianOnError (e);
                     }
 
                     @Override

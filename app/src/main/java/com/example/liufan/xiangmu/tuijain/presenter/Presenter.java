@@ -10,20 +10,20 @@ import com.example.liufan.xiangmu.tuijain.modle.Modle;
 
 public class Presenter {
     //轮播图
-    public void  getlunbopresenter(final IView.ILunBoView ILunBoView){
+    public void  getlunbopresenter(final IView IView){
         IModle IModle=new IModle ();
-        IModle.getlunbo (new Modle.Ilunbo () {
+        IModle.getlunbo (new Modle () {
             @Override
             public void TuijianOnSuccess(LunBoBean LunBoBean) {
-                if(ILunBoView!=null){
-                    ILunBoView.TuijianOnSuccess (LunBoBean);
+                if(IView!=null){
+                    IView.TuijianOnSuccess (LunBoBean);
                 }
             }
 
             @Override
             public void TuijianOnError(Throwable Throwable) {
-                if(ILunBoView!=null){
-                    ILunBoView.TuijianOnError (Throwable);
+                if(IView!=null){
+                    IView.TuijianOnError (Throwable);
                 }
             }
         });

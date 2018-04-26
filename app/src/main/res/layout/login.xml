@@ -10,6 +10,10 @@
         android:orientation="horizontal">
         <TextView
             android:text="6666"
+<<<<<<< HEAD
+=======
+
+>>>>>>> d092d8bb9f4f729f6f8321f09679734d09eef232
             android:textSize="35dp"
             android:textColor="#D7DADE"
             android:layout_width="match_parent"
