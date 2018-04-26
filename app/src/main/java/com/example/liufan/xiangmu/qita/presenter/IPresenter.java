@@ -43,7 +43,10 @@ public class IPresenter implements Presenter {
             @Override
             public void okLoadSuccess(Object object) {
                 registerActivity.RegisterSuccess((RegisterBean) object);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 725c268a7c9241d343e75e0fd4199869e0992eee
             }
         });
     }
