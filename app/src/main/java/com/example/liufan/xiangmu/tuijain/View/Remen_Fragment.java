@@ -41,7 +41,7 @@ public class Remen_Fragment extends Fragment {
         view = inflater.inflate (R.layout.tuijian_remen_layout, container, false);
         unbinder = ButterKnife.bind (this, view);
         remenrev1.addHeaderView (inflate );
-        bann = inflate.findViewById (R.id.bann);
+        //bann = inflate.findViewById (R.id.bann);
         remenrev1.setLayoutManager (new LinearLayoutManager (getActivity ()));
         remenrev1.setLoadingListener (new XRecyclerView.LoadingListener () {
             @Override
@@ -77,8 +77,8 @@ public class Remen_Fragment extends Fragment {
                     String icon = data.get (i).getIcon ();
                     list_tu.add (icon);
                 }
-                bann.setImages (list_tu);
-                bann.setDelayTime (1000);
+                //bann.setImages (list_tu);
+                //bann.setDelayTime (1000);
             }
 
             @Override
