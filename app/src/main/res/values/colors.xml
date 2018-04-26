@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <!--标题栏颜色-->
+    <color name="colorPrimary">#03a9f4</color>
+    <!--通知栏颜色-->
+    <color name="colorPrimaryDark">#03a9f4</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorText">#ffff</color>
+    <color name="colorFont">#999999</color>
+    <color name="colorFont2">#bbbbbb</color>
+    <color name="colorGreen">#4dbf4d</color>
+    <color name="colorBlue">#29b6f6</color>
+
+    <color name="reg_white">#fff</color>
+    <color name="wel">#f66</color>
+    <color name="qq">#0099ff</color>
+    <color name="theme_dialog">#00000000</color>
+    <color name="weichat">#339933</color>
+    <color name="edit_bg">#80987654</color>
+    <color name="edit_middle">#eee</color>
+    <color name="setting_middle">#444</color>
+    <color name="edit_name">#ddd</color>
+    <color name="btn_other_reg_bg">#ffcc66</color>
+    <color name="main_head">#0099ff</color>
+    <color name="main_title">#fff</color>
+    <color name="main_title_night">#000</color>
+    <color name="night_bg">#fcc</color>
+    <color name="left_name_bg">#fff</color>
+    <color name="menu_tv_bg">#000000</color>
+    <color name="thumb_normal">#cccccc</color>
+    <color name="thumb_select">#00ff00</color>
+    <color name="duanzi_name">#ff0000</color>
+    <color name="duanzi_time">#000000</color>
+    <color name="hot_title">#000000</color>
+    <color name="hot_white">#ffffff</color>
+    <color name="publish_share">#8DA1F0</color>
+    <color name="publish_edit">#A2DEFA</color>
+    <color name="setting_exit_login">#FC7265</color>
+    <color name="user_head_name">#ffffff</color>
+    <color name="user_praise_normal">#bbbbbb</color>
+    <color name="user_praise_select">#339933</color>
+    <color name="duanzi">#FFFF99</color>
 </resources>
