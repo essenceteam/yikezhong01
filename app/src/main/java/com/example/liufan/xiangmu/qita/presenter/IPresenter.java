@@ -42,6 +42,7 @@ public class IPresenter implements Presenter {
             @Override
             public void okLoadSuccess(Object object) {
                 registerActivity.RegisterSuccess((RegisterBean) object);
+
             }
         });
     }

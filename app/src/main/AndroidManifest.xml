@@ -31,7 +31,8 @@
             android:value="1920" />
 
         <activity android:name=".activity.QiTaActivity" />
-        <activity android:name=".activity.RegisterActivity"></activity>
+        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.CreationActivity"></activity>
     </application>
 
 </manifest>

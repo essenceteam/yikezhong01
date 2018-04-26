@@ -1,5 +1,6 @@
 package com.example.liufan.xiangmu.tuijain.presenter;
-import com.example.liufan.xiangmu.tuijain.View.Iview.IView;
+
+import com.example.liufan.xiangmu.tuijain.view.IView;
 import com.example.liufan.xiangmu.tuijain.modle.Bean.LunBoBean;
 import com.example.liufan.xiangmu.tuijain.modle.IModle;
 import com.example.liufan.xiangmu.tuijain.modle.Modle;
@@ -10,20 +11,20 @@ import com.example.liufan.xiangmu.tuijain.modle.Modle;
 
 public class Presenter {
     //轮播图
-    public void  getlunbopresenter(final IView IView){
+    public void  getlunbopresenter(final IView iView){
         IModle IModle=new IModle ();
         IModle.getlunbo (new Modle () {
             @Override
             public void TuijianOnSuccess(LunBoBean LunBoBean) {
-                if(IView!=null){
-                    IView.TuijianOnSuccess (LunBoBean);
+                if(iView!=null){
+                    iView.TuijianOnSuccess (LunBoBean);
                 }
             }
 
             @Override
             public void TuijianOnError(Throwable Throwable) {
-                if(IView!=null){
-                    IView.TuijianOnError (Throwable);
+                if(iView!=null){
+                    iView.TuijianOnError (Throwable);
                 }
             }
         });

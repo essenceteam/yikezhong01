@@ -12,6 +12,9 @@ import android.widget.ImageView;
 
 import com.example.liufan.xiangmu.R;
 import com.example.liufan.xiangmu.adapter.TuiJian_ReMen_Baseadapter;
+
+import com.example.liufan.xiangmu.tuijain.view.IView;
+
 import com.example.liufan.xiangmu.tuijain.modle.Bean.LunBoBean;
 import com.example.liufan.xiangmu.tuijain.View.Iview.IView;
 import com.example.liufan.xiangmu.tuijain.presenter.Presenter;
@@ -19,10 +22,8 @@ import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -50,6 +51,14 @@ public class Remen_Fragment extends Fragment {
         remenrev1.addHeaderView (inflate);
         bann = this.inflate.findViewById (R.id.bann);
         getlunbo();
+        getdata1();
+        TuiJian_ReMen_Baseadapter TuiJian_ReMen_Baseadapter=new TuiJian_ReMen_Baseadapter ();
+        remenrev1.setAdapter (TuiJian_ReMen_Baseadapter);
+
+        return this.view;
+    }
+    //上啦刷新，下拉加载
+    private void getdata1() {
         remenrev1.setLayoutManager (new LinearLayoutManager (getActivity ()));
         remenrev1.setLoadingListener (new XRecyclerView.LoadingListener () {
             @Override
@@ -62,11 +71,6 @@ public class Remen_Fragment extends Fragment {
 
             }
         });
-
-        TuiJian_ReMen_Baseadapter TuiJian_ReMen_Baseadapter=new TuiJian_ReMen_Baseadapter ();
-        remenrev1.setAdapter (TuiJian_ReMen_Baseadapter);
-
-        return this.view;
     }
 
     @Override
