@@ -66,7 +66,6 @@ public class Video_Remen extends Fragment implements Video_OnView {
                 video_remen_xrecy.loadMoreComplete();
             }
         });
-
         return view;
     }
 
@@ -84,5 +83,13 @@ public class Video_Remen extends Fragment implements Video_OnView {
         //适配器
         video_remen_adapter = new Video_ReMen_Adapter(getActivity(),data1);
         video_remen_xrecy.setAdapter(video_remen_adapter);
+
+        video_remen_adapter.onItemClick(new Video_ReMen_Adapter.Itemclick() {
+            @Override
+            public void itemclick(View view, int position) {
+                data1.get(position);
+            }
+        });
+
     }
 }
