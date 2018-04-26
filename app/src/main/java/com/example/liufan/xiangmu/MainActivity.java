@@ -2,14 +2,13 @@ package com.example.liufan.xiangmu;
 
 import android.content.Intent;
 import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import com.example.liufan.xiangmu.R;
 import com.example.liufan.xiangmu.activity.CreationActivity;
 import com.example.liufan.xiangmu.baes.BaesActivity;
 import com.example.liufan.xiangmu.fragment.AttentionFragment;
@@ -25,7 +24,8 @@ public class MainActivity extends BaesActivity {
     private AttentionFragment attentionFragment;
     private CrosstalkFragment crosstalkFragment;
     private TextView head_te;
-    private ImageView head_iv1;
+    private ImageView head_iv1,head_iv;
+    private DrawerLayout draw;
 
     @Override
     public int getlayout() {
@@ -37,6 +37,8 @@ public class MainActivity extends BaesActivity {
         rg = findViewById(R.id.rg);
         head_te = findViewById(R.id.head_te);
         head_iv1 = findViewById(R.id.head_iv1);
+        head_iv = findViewById(R.id.head_iv);
+        draw = findViewById(R.id.draw);
     }
 
     @Override
@@ -95,6 +97,13 @@ public class MainActivity extends BaesActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, CreationActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        head_iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                draw .openDrawer(Gravity.LEFT);
             }
         });
     }

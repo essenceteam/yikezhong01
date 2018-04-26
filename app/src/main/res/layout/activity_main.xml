@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/draw"
     android:layout_height="match_parent"
     tools:context="com.example.liufan.xiangmu.MainActivity">
 
@@ -90,7 +91,7 @@
                 android:button="@null" />
         </RadioGroup>
     </LinearLayout>
-    
+
 
             <!--以下是侧滑布局-->
 
