@@ -104,32 +104,5 @@ public class Remen_Fragment extends Fragment {
 
             }
         });
-
-
-//        presenter = new com.example.liufan.xiangmu.tuijain.presenter.Presenter ();
-//        presenter.getlunbopresenter (new com.example.liufan.xiangmu.tuijain.View.Iview.IView () {
-//            private List<LunBoBean.DataBean> data;
-//            public void TuijianOnSuccess(LunBoBean LunBoBean) {
-//                data = LunBoBean.getData ();
-//                for (int i = 0; i <data.size () ; i++) {
-//                    String icon = data.get (i).getIcon ();
-//                    list_tu.add (icon);
-//                }
-//               /* bann.setImages (list_tu);
-//                bann.setDelayTime (1000);
-//                bann.setImageLoader (new ImageLoader () {
-//                    @Override
-//                    public void displayImage(Context context, Object path, ImageView imageView) {
-//                        Picasso.with (getActivity ()).load ((String) path).placeholder (R.drawable.ic_launcher_background).into (imageView);
-//                    }
-//                });
-//                bann.start ();*/
-//            }
-//
-//            public void TuijianOnError(Throwable Throwable) {
-//
-//            }
-//        });
-
     }
 }
