@@ -12,21 +12,15 @@ import android.widget.ImageView;
 
 import com.example.liufan.xiangmu.R;
 import com.example.liufan.xiangmu.adapter.TuiJian_ReMen_Baseadapter;
-<<<<<<< HEAD
 import com.example.liufan.xiangmu.tuijain.view.IView;
-=======
-import com.example.liufan.xiangmu.tuijain.View.Iview.ItuijianView;
->>>>>>> 725c268a7c9241d343e75e0fd4199869e0992eee
 import com.example.liufan.xiangmu.tuijain.modle.Bean.LunBoBean;
 import com.example.liufan.xiangmu.tuijain.presenter.Presenter;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -54,7 +48,6 @@ public class Remen_Fragment extends Fragment {
         remenrev1.addHeaderView (inflate);
         bann = this.inflate.findViewById (R.id.bann);
         getlunbo();
-
         getdata1();
         TuiJian_ReMen_Baseadapter TuiJian_ReMen_Baseadapter=new TuiJian_ReMen_Baseadapter ();
         remenrev1.setAdapter (TuiJian_ReMen_Baseadapter);
@@ -85,7 +78,7 @@ public class Remen_Fragment extends Fragment {
     //轮播图
     public void getlunbo(){
         Presenter Presenter=new Presenter ();
-        Presenter.getlunbopresenter (new ItuijianView () {
+        Presenter.getlunbopresenter (new IView () {
 
             private List<LunBoBean.DataBean> data;
 
