@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -90,6 +91,7 @@ public class Video_Remen extends Fragment implements Video_OnView {
             @Override
             public void itemclick(View view, int position) {
                 String videoUrl = data1.get(position).getVideoUrl();
+                Log.i("LLLLVideoURL",""+videoUrl);
                 Intent intent = new Intent(getActivity(), Video_ShiPinActivity.class);
                 intent.putExtra("videourl",""+videoUrl);
                 startActivity(intent);

@@ -35,12 +35,14 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
-        android:src="@drawable/sjip"/>
+        android:src="@drawable/videovideo"
+        android:background="#E0F683"/>
     <ImageView
         android:id="@+id/wenb_iv"
         android:layout_marginTop="80dp"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
-        android:src="@drawable/wenb"/>
+        android:src="@drawable/duanziduanzi"
+        android:background="#E0F683"/>
 </LinearLayout>
