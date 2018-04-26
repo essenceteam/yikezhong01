@@ -14,9 +14,9 @@ import io.reactivex.schedulers.Schedulers;
  * Created by liufan on 2018/4/24.
  */
 
-public class Video_Modle implements VideoI_Modle {
+public class Video_Modle {
 
-    @Override
+
     public void getVideo_HQSP(String source, String appVersion, String type, String page, final Video_Moudle_hui video_moudle_hui) {
         RetrofitUtil inData = RetrofitUtil.getInData ();
         Video_Api_Service retrofit = inData.getRetrofit(API.Url, Video_Api_Service.class);

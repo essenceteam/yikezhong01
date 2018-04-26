@@ -1,15 +1,15 @@
 package com.example.liufan.xiangmu.adapter;
 
 import android.content.Context;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.liufan.xiangmu.R;
 import com.example.liufan.xiangmu.shipin.bean.HQSPBean;
-import com.facebook.drawee.view.SimpleDraweeView;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -36,10 +36,9 @@ public class Video_ReMen_Adapter extends RecyclerView.Adapter<Video_ReMen_Adapte
     public void onBindViewHolder(Myviewholber holder, int position) {
         String icon = data.get(position).getUser().getIcon();
         if (icon != null) {
-            Log.i("LLLLLLLLLLLLLD",""+icon);
-            //创建将要下载的图片的URI
-            Uri imageUri = Uri.parse(icon);
-            holder.video_remen_xrecy_fresco.setImageURI(imageUri);
+            Log.i("哈哈哈哈或",""+icon);
+//            创建将要下载的图片的URI
+            Picasso.with(context).load(icon).placeholder(R.drawable.ic_launcher_background).into(holder.video_remen_xrecy_iv);
         }
     }
     @Override
@@ -49,11 +48,11 @@ public class Video_ReMen_Adapter extends RecyclerView.Adapter<Video_ReMen_Adapte
 
     class Myviewholber extends RecyclerView.ViewHolder{
 
-        private final SimpleDraweeView video_remen_xrecy_fresco;
+        private final ImageView video_remen_xrecy_iv;
 
         public Myviewholber(View itemView) {
             super(itemView);
-            video_remen_xrecy_fresco = itemView.findViewById(R.id.video_remen_xrecy_fresco);
+            video_remen_xrecy_iv = itemView.findViewById(R.id.video_remen_xrecy_iv);
         }
     }
 

@@ -8,15 +8,12 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.example.liufan.xiangmu.R;
 import com.example.liufan.xiangmu.adapter.ViewPagerAdapter;
 import com.example.liufan.xiangmu.tuijain.View.GuanZhu_Fragment;
 import com.example.liufan.xiangmu.tuijain.View.Remen_Fragment;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;

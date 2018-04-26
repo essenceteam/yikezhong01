@@ -1,5 +1,6 @@
 package com.example.liufan.xiangmu.tuijain.View;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -7,12 +8,17 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.liufan.xiangmu.R;
-import com.example.liufan.xiangmu.tuijain.View.IView.IView;
+import com.example.liufan.xiangmu.adapter.TuiJian_ReMen_Baseadapter;
+import com.example.liufan.xiangmu.tuijain.View.Iview.IView;
 import com.example.liufan.xiangmu.tuijain.modle.Bean.LunBoBean;
+import com.example.liufan.xiangmu.tuijain.presenter.Presenter;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
+import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
+import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,8 +46,10 @@ public class Remen_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate (R.layout.tuijian_remen_layout, container, false);
         unbinder = ButterKnife.bind (this, view);
-        remenrev1.addHeaderView (inflate );
-        bann = inflate.findViewById (R.id.bann);
+        inflate = View.inflate (getActivity (), R.layout.bann_layout, null);
+        remenrev1.addHeaderView (inflate);
+        bann = this.inflate.findViewById (R.id.bann);
+        getlunbo();
         remenrev1.setLayoutManager (new LinearLayoutManager (getActivity ()));
         remenrev1.setLoadingListener (new XRecyclerView.LoadingListener () {
             @Override
@@ -54,10 +62,11 @@ public class Remen_Fragment extends Fragment {
 
             }
         });
-//        TuiJian_ReMen_Baseadapter TuiJian_ReMen_Baseadapter=new TuiJian_ReMen_Baseadapter ();
-//        remenrev1.setAdapter (TuiJian_ReMen_Baseadapter);
-        getlunbo();
-        return view;
+
+        TuiJian_ReMen_Baseadapter TuiJian_ReMen_Baseadapter=new TuiJian_ReMen_Baseadapter ();
+        remenrev1.setAdapter (TuiJian_ReMen_Baseadapter);
+
+        return this.view;
     }
 
     @Override
@@ -67,9 +76,11 @@ public class Remen_Fragment extends Fragment {
     }
     //轮播图
     public void getlunbo(){
-        presenter = new com.example.liufan.xiangmu.tuijain.presenter.Presenter ();
-        presenter.getlunbopresenter (new IView () {
+        Presenter Presenter=new Presenter ();
+        Presenter.getlunbopresenter (new IView () {
+
             private List<LunBoBean.DataBean> data;
+
             @Override
             public void TuijianOnSuccess(LunBoBean LunBoBean) {
                 data = LunBoBean.getData ();
@@ -79,6 +90,13 @@ public class Remen_Fragment extends Fragment {
                 }
                 bann.setImages (list_tu);
                 bann.setDelayTime (1000);
+                bann.setImageLoader (new ImageLoader () {
+                    @Override
+                    public void displayImage(Context context, Object path, ImageView imageView) {
+                        Picasso.with (context).load ((String) path).into (imageView);
+                    }
+                });
+                bann.start ();
             }
 
             @Override
@@ -86,6 +104,5 @@ public class Remen_Fragment extends Fragment {
 
             }
         });
-
     }
 }

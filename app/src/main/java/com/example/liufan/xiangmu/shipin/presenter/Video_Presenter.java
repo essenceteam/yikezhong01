@@ -26,6 +26,7 @@ public class Video_Presenter extends BaseVideo_Presenters<Video_OnView> {
 
             @Override
             public void onSuccess(Object object) {
+//                Log.i("LLC你好","三国杀手电筒色弱");
                 v.onSuccess(object);
             }
         });
