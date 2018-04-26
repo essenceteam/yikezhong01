@@ -11,7 +11,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.liufan.xiangmu.R;
+import com.example.liufan.xiangmu.adapter.TuiJian_ReMen_Baseadapter;
+import com.example.liufan.xiangmu.tuijain.View.Iview.IView;
 import com.example.liufan.xiangmu.tuijain.modle.Bean.LunBoBean;
+import com.example.liufan.xiangmu.tuijain.presenter.Presenter;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.squareup.picasso.Picasso;
 import com.youth.banner.Banner;
@@ -43,8 +46,10 @@ public class Remen_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate (R.layout.tuijian_remen_layout, container, false);
         unbinder = ButterKnife.bind (this, view);
-        remenrev1.addHeaderView (inflate );
-       /* bann = inflate.findViewById (R.id.bann);*/
+        inflate = View.inflate (getActivity (), R.layout.bann_layout, null);
+        remenrev1.addHeaderView (inflate);
+        bann = this.inflate.findViewById (R.id.bann);
+        getlunbo();
         remenrev1.setLayoutManager (new LinearLayoutManager (getActivity ()));
         remenrev1.setLoadingListener (new XRecyclerView.LoadingListener () {
             @Override
@@ -57,11 +62,11 @@ public class Remen_Fragment extends Fragment {
 
             }
         });
-        getlunbo();
-//        TuiJian_ReMen_Baseadapter TuiJian_ReMen_Baseadapter=new TuiJian_ReMen_Baseadapter ();
-//        remenrev1.setAdapter (TuiJian_ReMen_Baseadapter);
 
-        return view;
+        TuiJian_ReMen_Baseadapter TuiJian_ReMen_Baseadapter=new TuiJian_ReMen_Baseadapter ();
+        remenrev1.setAdapter (TuiJian_ReMen_Baseadapter);
+
+        return this.view;
     }
 
     @Override
@@ -71,30 +76,60 @@ public class Remen_Fragment extends Fragment {
     }
     //轮播图
     public void getlunbo(){
-        presenter = new com.example.liufan.xiangmu.tuijain.presenter.Presenter ();
-        presenter.getlunbopresenter (new com.example.liufan.xiangmu.tuijain.View.Iview.IView () {
+        Presenter Presenter=new Presenter ();
+        Presenter.getlunbopresenter (new IView () {
+
             private List<LunBoBean.DataBean> data;
+
+            @Override
             public void TuijianOnSuccess(LunBoBean LunBoBean) {
                 data = LunBoBean.getData ();
                 for (int i = 0; i <data.size () ; i++) {
                     String icon = data.get (i).getIcon ();
                     list_tu.add (icon);
                 }
-               /* bann.setImages (list_tu);
+                bann.setImages (list_tu);
                 bann.setDelayTime (1000);
                 bann.setImageLoader (new ImageLoader () {
                     @Override
                     public void displayImage(Context context, Object path, ImageView imageView) {
-                        Picasso.with (getActivity ()).load ((String) path).placeholder (R.drawable.ic_launcher_background).into (imageView);
+                        Picasso.with (context).load ((String) path).into (imageView);
                     }
                 });
-                bann.start ();*/
+                bann.start ();
             }
 
+            @Override
             public void TuijianOnError(Throwable Throwable) {
 
             }
         });
+
+
+//        presenter = new com.example.liufan.xiangmu.tuijain.presenter.Presenter ();
+//        presenter.getlunbopresenter (new com.example.liufan.xiangmu.tuijain.View.Iview.IView () {
+//            private List<LunBoBean.DataBean> data;
+//            public void TuijianOnSuccess(LunBoBean LunBoBean) {
+//                data = LunBoBean.getData ();
+//                for (int i = 0; i <data.size () ; i++) {
+//                    String icon = data.get (i).getIcon ();
+//                    list_tu.add (icon);
+//                }
+//               /* bann.setImages (list_tu);
+//                bann.setDelayTime (1000);
+//                bann.setImageLoader (new ImageLoader () {
+//                    @Override
+//                    public void displayImage(Context context, Object path, ImageView imageView) {
+//                        Picasso.with (getActivity ()).load ((String) path).placeholder (R.drawable.ic_launcher_background).into (imageView);
+//                    }
+//                });
+//                bann.start ();*/
+//            }
+//
+//            public void TuijianOnError(Throwable Throwable) {
+//
+//            }
+//        });
 
     }
 }
