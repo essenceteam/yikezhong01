@@ -1,5 +1,6 @@
 package com.example.liufan.xiangmu.shipin.video_frag2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.liufan.xiangmu.R;
+import com.example.liufan.xiangmu.activity.Video_ShiPinActivity;
 import com.example.liufan.xiangmu.adapter.Video_ReMen_Adapter;
 import com.example.liufan.xiangmu.shipin.bean.HQSPBean;
 import com.example.liufan.xiangmu.shipin.presenter.Video_Presenter;
@@ -87,7 +89,10 @@ public class Video_Remen extends Fragment implements Video_OnView {
         video_remen_adapter.onItemClick(new Video_ReMen_Adapter.Itemclick() {
             @Override
             public void itemclick(View view, int position) {
-                data1.get(position);
+                String videoUrl = data1.get(position).getVideoUrl();
+                Intent intent = new Intent(getActivity(), Video_ShiPinActivity.class);
+                intent.putExtra("videourl",""+videoUrl);
+                startActivity(intent);
             }
         });
 

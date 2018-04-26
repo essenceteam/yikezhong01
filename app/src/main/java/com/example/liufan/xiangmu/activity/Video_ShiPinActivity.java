@@ -1,5 +1,7 @@
 package com.example.liufan.xiangmu.activity;
 
+import android.content.Intent;
+
 import com.example.liufan.xiangmu.R;
 import com.example.liufan.xiangmu.baes.BaesActivity;
 
@@ -15,6 +17,9 @@ public class Video_ShiPinActivity extends BaesActivity{
 
     @Override
     public void getinit() {
+        Intent intent = getIntent();
+        String videourl = intent.getStringExtra("videourl");
+//        JCVideoPlayerStandard player_list_video = findViewById(R.id.player_list_video);
 
     }
 
