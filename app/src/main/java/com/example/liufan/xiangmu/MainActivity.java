@@ -10,11 +10,13 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.liufan.xiangmu.activity.CreationActivity;
+import com.example.liufan.xiangmu.activity.LoginActivity;
 import com.example.liufan.xiangmu.baes.BaesActivity;
 import com.example.liufan.xiangmu.fragment.AttentionFragment;
 import com.example.liufan.xiangmu.fragment.CrosstalkFragment;
 import com.example.liufan.xiangmu.fragment.RecommendFragment;
 import com.example.liufan.xiangmu.fragment.VideoFragment;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 public class MainActivity extends BaesActivity {
 
@@ -26,6 +28,7 @@ public class MainActivity extends BaesActivity {
     private TextView head_te;
     private ImageView head_iv1,head_iv;
     private DrawerLayout draw;
+    private SimpleDraweeView sDraw;
 
     @Override
     public int getlayout() {
@@ -39,6 +42,7 @@ public class MainActivity extends BaesActivity {
         head_iv1 = findViewById(R.id.head_iv1);
         head_iv = findViewById(R.id.head_iv);
         draw = findViewById(R.id.draw);
+        sDraw = findViewById(R.id.smenu_head);
     }
 
     @Override
@@ -104,6 +108,13 @@ public class MainActivity extends BaesActivity {
             @Override
             public void onClick(View v) {
                 draw .openDrawer(Gravity.LEFT);
+            }
+        });
+
+        sDraw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
             }
         });
     }

@@ -93,7 +93,7 @@
     </LinearLayout>
 
 
-            <!--以下是侧滑布局-->
+            <!--       以下是侧滑布局        -->
 
 
     <LinearLayout
@@ -118,7 +118,7 @@
                 android:layout_marginTop="50dp">
 
                 <com.facebook.drawee.view.SimpleDraweeView
-                    android:id="@+id/slidingmenu_head"
+                    android:id="@+id/smenu_head"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_gravity="center"
