@@ -1,5 +1,5 @@
 package com.example.liufan.xiangmu.tuijain.presenter;
-import com.example.liufan.xiangmu.tuijain.View.IView.IView;
+import com.example.liufan.xiangmu.tuijain.View.Iview.IView;
 import com.example.liufan.xiangmu.tuijain.modle.Bean.LunBoBean;
 import com.example.liufan.xiangmu.tuijain.modle.IModle;
 import com.example.liufan.xiangmu.tuijain.modle.Modle;
