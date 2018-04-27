@@ -1,4 +1,5 @@
 package com.example.liufan.xiangmu.activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.View;
@@ -82,9 +83,9 @@ public class QiTaActivity extends BaesActivity implements LoginView{
         //获取登录注册的结果
         int uid = loginBean.getData().getUid();
         String token = loginBean.getData().getToken();
-        SharedPreferences sharedPreferences = getSharedPreferences("USER",0);
+        SharedPreferences sharedPreferences = getSharedPreferences("USER", Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = sharedPreferences.edit();
-        edit.putBoolean("bo",false);
+        edit.putBoolean("bo",true);
         edit.putInt("uid",uid);
         edit.putString("token",token);
         edit.commit();

@@ -1,9 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.liufan.xiangmu.activity.PublishanarticleActivity">
-
-</android.support.constraint.ConstraintLayout>
+    tools:context="com.example.liufan.xiangmu.activity.PublishanarticleActivity"
+    android:orientation="vertical"
+    android:id="@+id/main">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="#0BAAF4">
+    <TextView
+        android:id="@+id/qx_te"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="取消"
+        android:textSize="20dp"
+        android:textColor="#D7DADE"/>
+    <TextView
+        android:text="发表文章"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="20dp"
+        android:textColor="#D7DADE"
+        android:gravity="center" />
+    <TextView
+        android:id="@+id/fb_tb"
+        android:text="发表"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="20dp"
+        android:textColor="#D7DADE"
+        android:gravity="right" />
+</LinearLayout>
+<EditText
+    android:id="@+id/cz_ed"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:gravity="top"
+    android:hint="请输入内容，禁止色情、暴力等违反国家法律的内容，违者将以封号处理！"/>
+    <ImageView
+        android:src="@drawable/raw_1500020546"
+        android:id="@+id/cz_tianjia"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/tj_iv"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"/>
+        <ImageView
+            android:id="@+id/tj_iv1"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"/>
+        <ImageView
+            android:id="@+id/tj_iv2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"/>
+        <ImageView
+            android:id="@+id/tj_iv3"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+</LinearLayout>

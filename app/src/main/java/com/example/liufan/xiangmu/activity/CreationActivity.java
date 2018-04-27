@@ -48,12 +48,13 @@ public class CreationActivity extends BaesActivity implements View.OnClickListen
                 break;
             //跳转到段子的点击事件
             case R.id.wenb_iv:
-                
+                   Intent intent = new Intent(CreationActivity.this,PublishanarticleActivity.class);
+                   startActivity(intent);
                 break;
                 //回退到上一个页面
             case R.id.qx_te:
-                Intent intent = new Intent (CreationActivity.this, MainActivity.class);
-                startActivity (intent);
+                Intent intent1 = new Intent (CreationActivity.this, MainActivity.class);
+                startActivity (intent1);
                 break;
 
         }
