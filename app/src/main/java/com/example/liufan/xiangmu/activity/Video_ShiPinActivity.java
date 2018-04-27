@@ -1,6 +1,7 @@
 package com.example.liufan.xiangmu.activity;
 
 import android.content.Intent;
+import android.util.Log;
 
 import com.example.liufan.xiangmu.R;
 import com.example.liufan.xiangmu.baes.BaesActivity;
@@ -26,6 +27,7 @@ public class Video_ShiPinActivity extends BaesActivity{
         Intent intent = getIntent();
         String videourl = intent.getStringExtra("videourl");
         jzVideoPlayerStandard  = (JZVideoPlayerStandard) findViewById(R.id.videoplayer);
+        Log.d("哈哈666", "getinit: "+videourl);
         //JC 视频播放的URl 地址 的方法是用到了setUP( URL , )
         jzVideoPlayerStandard.setUp("http://jzvd.nathen.cn/c6e3dc12a1154626b3476d9bf3bd7266/6b56c5f0dc31428083757a45764763b0-5287d2089db37e62345123a1be272f8b.mp4"
                 , JZVideoPlayerStandard.SCREEN_LAYOUT_NORMAL,"请闭眼");

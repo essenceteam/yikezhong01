@@ -20,12 +20,7 @@ import java.util.List;
 
 public class TuiJian_ReMen_Baseadapter extends XRecyclerView.Adapter<TuiJian_ReMen_Baseadapter.MyViewHodler> {
   private  Context context;
-  private List<TuijianshipinBean.DataBean>list;
 
-    public TuiJian_ReMen_Baseadapter(Context context, List<TuijianshipinBean.DataBean> list) {
-        this.context = context;
-        this.list = list;
-    }
 
     @Override
     public MyViewHodler onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -41,7 +36,7 @@ public class TuiJian_ReMen_Baseadapter extends XRecyclerView.Adapter<TuiJian_ReM
 
     @Override
     public int getItemCount() {
-        return list.size ();
+        return 0;
     }
 
     class MyViewHodler extends RecyclerView.ViewHolder {
@@ -52,8 +47,8 @@ public class TuiJian_ReMen_Baseadapter extends XRecyclerView.Adapter<TuiJian_ReM
             TextView usertime = itemView.findViewById (R.id.usertime);
             ImageView zidingyi = itemView.findViewById (R.id.zidingyi);
 
-//            JCVideoPlayerStandard player_list_tuijian = itemView.findViewById (R.id.player_list_tuijian);
-           // player_list_tuijian.setUp ("", JCVideoPlayer.SCREEN_LAYOUT_LIST,"");
+
+
 
         }
     }

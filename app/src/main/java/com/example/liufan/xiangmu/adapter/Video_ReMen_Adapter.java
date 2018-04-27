@@ -40,7 +40,6 @@ public class Video_ReMen_Adapter extends RecyclerView.Adapter<Video_ReMen_Adapte
 //            创建将要下载的图片的URI
             Picasso.with(context).load(icon).placeholder(R.drawable.ic_launcher_background).into(holder.video_remen_xrecy_iv);
         }
-
         //item为接口的变量名
         if (item!=null){
             //holder为Myhodler holder的参数
@@ -52,7 +51,6 @@ public class Video_ReMen_Adapter extends RecyclerView.Adapter<Video_ReMen_Adapte
                 }
             });
         }
-
     }
     @Override
     public int getItemCount() {
