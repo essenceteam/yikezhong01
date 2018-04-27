@@ -34,8 +34,8 @@ public class Presenter {
         });
     }
     //视频
-    public void getvrdiopresenter(String android , int page, final IShiPinView IShiPinView){
-        IModle.getvidio (android, page, new ShiPinModle () {
+    public void getvrdiopresenter(String android , int page,String ty, final IShiPinView IShiPinView){
+        IModle.getvidio (android, page,ty, new ShiPinModle () {
             @Override
             public void TuijianShiPinOnSuccess(TuijianshipinBean TuijianshipinBean) {
                 if(IShiPinView!=null){

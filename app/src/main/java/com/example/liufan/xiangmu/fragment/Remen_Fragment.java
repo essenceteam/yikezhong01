@@ -2,14 +2,18 @@ package com.example.liufan.xiangmu.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.bawei.swiperefreshlayoutlibrary.SwipyRefreshLayout;
+import com.bawei.swiperefreshlayoutlibrary.SwipyRefreshLayoutDirection;
 import com.example.liufan.xiangmu.R;
 import com.example.liufan.xiangmu.adapter.Tuijian_Video_baseadapter;
 import com.example.liufan.xiangmu.tuijain.View.IShiPinView;
@@ -39,54 +43,76 @@ public class Remen_Fragment extends Fragment {
     Unbinder unbinder;
     @BindView(R.id.bann)
     Banner bann;
+    @BindView(R.id.sw)
+    SwipyRefreshLayout sw;
     private View view;
-    private int page =1;
+    private int page = 1;
     Presenter Presenter = new Presenter ();
     List<String> list_tu = new ArrayList<> ();
+    private List<TuijianshipinBean.DataBean> data;
+    private Tuijian_Video_baseadapter tuijian_video_baseadapter;
+
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate (R.layout.tuijian_remen_layout, container, false);
         unbinder = ButterKnife.bind (this, view);
+
         remenrev1.setLayoutManager (new LinearLayoutManager (getActivity ()));
-        remenrev1.setLoadingListener (new XRecyclerView.LoadingListener () {
-            @Override
-            public void onRefresh() {
+       sw.setDirection (SwipyRefreshLayoutDirection.BOTH);
+       sw.setColorSchemeResources (R.color.colorAccent,R.color.colorPrimaryDark,R.color.colorPrimary);
+       sw.setOnRefreshListener (new SwipyRefreshLayout.OnRefreshListener () {
+           @Override
+           public void onRefresh(int index) {
+               new Handler ().postDelayed (new Runnable () {
+                   @Override
+                   public void run() {
+                       Log.i ("LLLLJIAZAI", "刷新");
+                       page = 1;
+                       getdata1 (page);
+                       tuijian_video_baseadapter.notifyDataSetChanged ();
+                       sw.setRefreshing (false);
+                   }
+               }, 3000);
+           }
 
-            }
-
-            @Override
-            public void onLoadMore() {
-
-            }
-        });
+           @Override
+           public void onLoad(int index) {
+               page++;
+               new Handler ().postDelayed (new Runnable () {
+                   @Override
+                   public void run() {
+                       Log.i ("LLLLJIAZAI", "刷新");
+                       Log.i ("LLLLJIAZAI", "加载");
+                       data.clear ();
+                       getdata1 (page);
+                       tuijian_video_baseadapter.notifyDataSetChanged ();
+                       sw.setRefreshing (false);
+                   }
+               }, 3000);
+           }
+       });
         getlunbo ();
-        getdata1 ();
+        getdata1 (page);
         return view;
     }
 
-    //上啦刷新，下拉加载
-    private void getdata1() {
-       Presenter.getvrdiopresenter ("android", page, new IShiPinView () {
+    //视频加载
+    private void getdata1(int page) {
+        Presenter.getvrdiopresenter ("android", page, "1", new IShiPinView () {
+            @Override
+            public void TuijianShiPinOnSuccess(TuijianshipinBean TuijianshipinBean) {
+                data = TuijianshipinBean.getData ();
+                tuijian_video_baseadapter = new Tuijian_Video_baseadapter (getActivity (), data);
+                remenrev1.setAdapter (tuijian_video_baseadapter);
+            }
 
-           private List<TuijianshipinBean.DataBean> data;
-
-           @Override
-           public void TuijianShiPinOnSuccess(TuijianshipinBean TuijianshipinBean) {
-               data = TuijianshipinBean.getData ();
-               Tuijian_Video_baseadapter Tuijian_Video_baseadapter=new Tuijian_Video_baseadapter (getActivity (),data);
-               remenrev1.setAdapter (Tuijian_Video_baseadapter);
-
-
-
-           }
-
-           @Override
-           public void TuijianShiPinOnError(Throwable Throwable) {
-
-           }
-       });
+            @Override
+            public void TuijianShiPinOnError(Throwable Throwable) {
+                Log.i ("推荐热门", Throwable.getMessage ());
+            }
+        });
     }
 
     @Override
