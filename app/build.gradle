@@ -52,4 +52,8 @@ dependencies {
     //jiecaovideoplayer
     compile 'cn.jzvd:jiaozivideoplayer:6.0.0'
     implementation files('libs/open_sdk_r5886_lite.jar')
+    //悬浮
+    compile 'com.getbase:floatingactionbutton:1.10.1'
+    compile 'com.android.support:design:26.1.0'
+
 }

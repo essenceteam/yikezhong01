@@ -2,59 +2,138 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/userimg"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_weight="2"
-            android:src="@mipmap/ic_launcher" />
+        android:layout_height="wrap_content">
 
         <LinearLayout
-            android:gravity="center"
-            android:layout_width="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/username"
-                android:gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+            <com.facebook.drawee.view.SimpleDraweeView
+                app:failureImage="@drawable/user"
+                app:failureImageScaleType="centerInside"
+                android:id="@+id/re_men_item_sdv"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                app:roundAsCircle="true"/>
 
-            <TextView
-                android:id="@+id/usertime"
-                android:gravity="center"
-                android:layout_marginTop="5dp"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/re_men_item_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/re_men_item_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="0dp"
+        <com.getbase.floatingactionbutton.FloatingActionsMenu
+            android:id="@+id/floating"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="4">
-            <ImageView
-                android:id="@+id/zidingyi"
+            android:layout_alignParentRight="true"
+            app:fab_expandDirection="left"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:fab_addButtonSize="mini">
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatList"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher"
-                />
-        </LinearLayout>
-    </LinearLayout>
-    <fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
-        android:id="@+id/player_list_tuijian"
+                app:fab_icon="@drawable/floataction_list"
+                app:fab_size="mini" />
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_icon="@drawable/floataction_grid"
+                app:fab_size="mini"/>
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatStaggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_icon="@drawable/floataction_staggle"
+                app:fab_size="mini"/>
+
+        </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/re_men_item_title"
         android:layout_width="match_parent"
-        android:layout_height="300dp" />
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <cn.jzvd.JZVideoPlayerStandard
+            android:layout_marginTop="10dp"
+            android:id="@+id/re_men_item_jiecao"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
+        <ImageView
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/dianxin"/>
+
+        <ImageView
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="70dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/xing"/>
+
+        <ImageView
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="115dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/zhuanfa"/>
+
+        <ImageView
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="160dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/pinglun1"/>
+
+    </RelativeLayout>
+
 
 </LinearLayout>

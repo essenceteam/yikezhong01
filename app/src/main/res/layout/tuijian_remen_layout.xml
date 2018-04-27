@@ -6,9 +6,21 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <com.jcodecraeer.xrecyclerview.XRecyclerView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/remenrev1" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <com.youth.banner.Banner
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/bann"
+                />
+            <com.jcodecraeer.xrecyclerview.XRecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/remenrev1" />
+        </LinearLayout>
+
     </ScrollView>
 </LinearLayout>
