@@ -32,6 +32,7 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp"
             android:background="@drawable/weixin1" />
 
         <Button
@@ -40,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/qq1" />
 
         <TextView
@@ -50,6 +52,7 @@
             android:gravity="center"
             android:text="其他方式登录"
             android:textColor="#BEBBB5"
+            android:paddingBottom="20dp"
             android:textSize="15dp" />
     </LinearLayout>
 </LinearLayout>

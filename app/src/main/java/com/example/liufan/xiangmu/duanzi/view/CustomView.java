@@ -77,11 +77,11 @@ public class CustomView extends RelativeLayout {
     public void showMenu() {
         //三个平移动画 平移出来
         ObjectAnimator firstAnimator = ObjectAnimator.ofFloat(image_pingbi
-                , "translationX", 0, -30 * 3);
+                , "translationX", 0, -45 * 3);
         ObjectAnimator secondAnimator = ObjectAnimator.ofFloat(image_copy
-                , "translationX", 0, -30 * 2);
+                , "translationX", 0, -45 * 2);
         ObjectAnimator thirdAnimator = ObjectAnimator.ofFloat(image_report
-                , "translationX", 0, -30 * 1);
+                , "translationX", 0, -45 * 1);
 
         //旋转动画
         ObjectAnimator rotation1 = ObjectAnimator.ofFloat(image_jian, "rotation", 0, 180, 0);
