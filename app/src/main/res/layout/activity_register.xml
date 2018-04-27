@@ -51,6 +51,7 @@
         <EditText
             android:id="@+id/password_et"
             android:layout_width="300dp"
+            android:inputType="textPassword"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:hint="输入大小写和数字，不能大于8位"/>

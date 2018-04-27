@@ -65,6 +65,7 @@
             android:textColor="#D7DADE"/>
         <EditText
             android:id="@+id/password_et"
+            android:inputType="textPassword"
             android:layout_width="300dp"
             android:layout_height="wrap_content" />
     </LinearLayout>
