@@ -88,6 +88,6 @@ public class QiTaActivity extends BaesActivity implements LoginView{
         edit.putInt("uid",uid);
         edit.putString("token",token);
         edit.commit();
-        Toast.makeText(this, loginBean.getCode(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "成功", Toast.LENGTH_SHORT).show();
     }
 }

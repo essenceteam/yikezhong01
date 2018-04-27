@@ -55,6 +55,7 @@ public class LoginActivity extends BaesActivity implements View.OnClickListener{
             case R.id.wx_bt:
                 break;
             case R.id.QQ_bt:
+                startActivity(new Intent(LoginActivity.this,QQLoginActivity.class));
                 break;
             case R.id.qita_te:
                 Intent intent =new Intent(LoginActivity.this,QiTaActivity.class);
