@@ -53,8 +53,6 @@
         <activity android:name=".activity.Video_ShiPinActivity" />
         <activity android:name=".activity.PublishanarticleActivity"></activity>
         <activity android:name=".activity.Video_YongHuShiPin"/>
-
-        <activity android:name=".activity.DZXQActivity"/>
     </application>
 
 </manifest>
