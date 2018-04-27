@@ -26,6 +26,8 @@ public class Video_ShiPinActivity extends BaesActivity{
     private ImageView video_fenxiang;
     private ImageView video_touxiang;
     private TextView video_qiangshafa;
+    int page = 1;
+    private String uid;
 
     @Override
     public int getlayout() {
@@ -38,6 +40,8 @@ public class Video_ShiPinActivity extends BaesActivity{
         String videourl = intent.getStringExtra("videourl");
         String icon = intent.getStringExtra("icon");
         String nickname = intent.getStringExtra("nickname");
+        uid = intent.getStringExtra("uid");
+
         jzVideoPlayerStandard  = (JZVideoPlayerStandard) findViewById(R.id.videoplayer);
         video_huiremenfujin = findViewById(R.id.video_huiremenfujin);
         video_xihuan = findViewById(R.id.video_xihuan);
@@ -51,11 +55,12 @@ public class Video_ShiPinActivity extends BaesActivity{
                 Toast.makeText(Video_ShiPinActivity.this, "想坐沙发？呵呵，你得先掏钱哟！", Toast.LENGTH_SHORT).show();
             }
         });
-
         video_touxiang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Video_ShiPinActivity.this, "点我干嘛！ 找揍啊？", Toast.LENGTH_SHORT).show();
+                Intent intent1 = new Intent(Video_ShiPinActivity.this,Video_YongHuShiPin.class);
+                intent1.putExtra("uid",""+uid);
+                startActivity(intent1);
             }
         });
         video_fenxiang.setOnClickListener(new View.OnClickListener() {
@@ -67,13 +72,25 @@ public class Video_ShiPinActivity extends BaesActivity{
         video_buxihuan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                video_buxihuan.setImageResource(R.drawable.raw_14);
+                if (page == 1){
+                    video_buxihuan.setImageResource(R.drawable.raw_14);
+                    page = 2;
+                }else {
+                    video_buxihuan.setImageResource(R.drawable.raw_1499933217);
+                    page = 1;
+                }
             }
         });
         video_xihuan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                video_xihuan.setImageResource(R.drawable.raw_1499933215);
+                if (page == 1){
+                    video_xihuan.setImageResource(R.drawable.raw_1499933215);
+                    page = 2;
+                }else {
+                    video_xihuan.setImageResource(R.drawable.raw_1499933216);
+                    page = 1;
+                }
             }
         });
         video_huiremenfujin.setOnClickListener(new View.OnClickListener() {
@@ -82,7 +99,6 @@ public class Video_ShiPinActivity extends BaesActivity{
                 finish();
             }
         });
-
         Log.d("哈哈666", "getinit: "+videourl);
         //JC 视频播放的URl 地址 的方法是用到了setUP( URL , )
         jzVideoPlayerStandard.setUp(videourl, JZVideoPlayerStandard.SCREEN_LAYOUT_NORMAL,nickname);

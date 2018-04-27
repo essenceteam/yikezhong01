@@ -12,7 +12,6 @@ import com.example.liufan.xiangmu.shipin.bean.Video_ReMenBean;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
-import java.util.Random;
 
 /**
  * author:Created by WangZhiQiang on 2018/4/24.
@@ -42,11 +41,11 @@ public class Video_ReMen_Adapter extends RecyclerView.Adapter<Video_ReMen_Adapte
             Picasso.with(context).load(cover).placeholder(R.drawable.ic_launcher_background).into(holder.video_remen_xrecy_iv);
         }
         //修改瀑布流随机高度
-        Random random = new Random();
-        ViewGroup.LayoutParams layoutParams = holder.video_remen_xrecy_iv.getLayoutParams();
-        layoutParams.height=random.nextInt(200)+100;
-        layoutParams.width = 200;
-        holder.video_remen_xrecy_iv.setLayoutParams(layoutParams);
+//        Random random = new Random();
+//        ViewGroup.LayoutParams layoutParams = holder.video_remen_xrecy_iv.getLayoutParams();
+//        layoutParams.height=random.nextInt(200)+100;
+//        layoutParams.width = 200;
+//        holder.video_remen_xrecy_iv.setLayoutParams(layoutParams);
         //item为接口的变量名
         if (item!=null){
             //holder为Myhodler holder的参数

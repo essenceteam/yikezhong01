@@ -25,4 +25,9 @@ public interface Video_Api_Service {
     //https://www.zhaoapi.cn/quarter/getNearVideos?token=F59DAFABFD3392862082B61174D823A6&source=android&appVersion=101&latitude=40.04710&longitude=116.3064&page=1
     @GET("quarter/getNearVideos")
     Observable<Video_FuJinBean> getVideo_FuJin(@Query("token") String token, @Query("source") String source, @Query("appVersion") String appVersion, @Query("latitude") String latitude, @Query("longitude") String longitude, @Query("page") String page);
+    //用户信息
+    //https://www.zhaoapi.cn/user/getUserInfo?source=android&appVersion=101&uid=1758
+    //获取某个用户的作品列表
+    //https://www.zhaoapi.cn/quarter/getUserVideos?source=android&appVersion=101&uid=1758&page=1
+    //
 }

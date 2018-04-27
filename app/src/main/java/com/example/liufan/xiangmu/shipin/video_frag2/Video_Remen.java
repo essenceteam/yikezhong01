@@ -53,7 +53,6 @@ public class Video_Remen extends Fragment implements Video_OnView {
                 pager = 1;
                 Log.i("LLLLJIAZAI","刷新");
                 //刷新
-                video_presenter = new Video_Presenter(Video_Remen.this);
                 video_presenter.getVideo_ReMen("F59DAFABFD3392862082B61174D823A6","android","101",""+pager);
                 video_remen_adapter.notifyDataSetChanged();
                 //刷新完成
@@ -62,13 +61,14 @@ public class Video_Remen extends Fragment implements Video_OnView {
             @Override
             public void onLoadMore() {
                 pager++;
-                Log.i("LLLLJIAZAI","加载");
+                Log.i("LLLLJIAZAI","加载1");
                 //加载
-                video_presenter = new Video_Presenter(Video_Remen.this);
                 video_presenter.getVideo_ReMen("F59DAFABFD3392862082B61174D823A6","android","101",""+pager);
                 video_remen_adapter.notifyDataSetChanged();
+                Log.i("LLLLJIAZAI","加载2");
                 //加载完成
                 video_remen_xrecy.loadMoreComplete();
+                Log.i("LLLLJIAZAI","加载3");
             }
         });
         return view;
@@ -83,7 +83,7 @@ public class Video_Remen extends Fragment implements Video_OnView {
     public void onSuccess(Object object) {
         //
         Video_ReMenBean video_reMenBean = (Video_ReMenBean) object;
-        List<Video_ReMenBean.DataBean> data = video_reMenBean.getData();
+        final List<Video_ReMenBean.DataBean> data = video_reMenBean.getData();
         data1.addAll(data);
         //适配器
         video_remen_adapter = new Video_ReMen_Adapter(getActivity(),data1);
@@ -91,21 +91,21 @@ public class Video_Remen extends Fragment implements Video_OnView {
         //设置item之间的间隔
 //        SpacesItemDecoration decoration=new SpacesItemDecoration(16);
 //        video_remen_xrecy.addItemDecoration(decoration);
-
         video_remen_adapter.onItemClick(new Video_ReMen_Adapter.Itemclick() {
             @Override
             public void itemclick(View view, int position) {
                 String videoUrl = data1.get(position).getVideoUrl();
                 String icon = data1.get(position).getUser().getIcon();
                 String nickname = data1.get(position).getUser().getNickname();
+                String uid = data1.get(position).getUid()+"";
                 Log.i("LLLLVideoURL",""+videoUrl);
                 Intent intent = new Intent(getActivity(), Video_ShiPinActivity.class);
                 intent.putExtra("videourl",""+videoUrl);
                 intent.putExtra("icon",""+icon);
                 intent.putExtra("nickname",""+nickname);
+                intent.putExtra("uid",""+uid);
                 startActivity(intent);
             }
         });
-
     }
 }
