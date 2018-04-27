@@ -26,17 +26,17 @@ public class Video_ShiPinActivity extends BaesActivity{
     public void getinit() {
         Intent intent = getIntent();
         String videourl = intent.getStringExtra("videourl");
+        String icon = intent.getStringExtra("icon");
+        String nickname = intent.getStringExtra("nickname");
         jzVideoPlayerStandard  = (JZVideoPlayerStandard) findViewById(R.id.videoplayer);
         Log.d("哈哈666", "getinit: "+videourl);
         //JC 视频播放的URl 地址 的方法是用到了setUP( URL , )
-        jzVideoPlayerStandard.setUp("http://jzvd.nathen.cn/c6e3dc12a1154626b3476d9bf3bd7266/6b56c5f0dc31428083757a45764763b0-5287d2089db37e62345123a1be272f8b.mp4"
-                , JZVideoPlayerStandard.SCREEN_LAYOUT_NORMAL,"请闭眼");
+        jzVideoPlayerStandard.setUp(videourl, JZVideoPlayerStandard.SCREEN_LAYOUT_NORMAL,nickname);
         //picass 图片加载框架
         Picasso.with(this)
-                .load("http://p.qpic.cn/videoyun/0/2449_43b6f696980311e59ed467f22794e792_1/640")
+                .load(icon)
                 .into(jzVideoPlayerStandard.thumbImageView);
     }
-
     @Override
     public void getdata() {
 

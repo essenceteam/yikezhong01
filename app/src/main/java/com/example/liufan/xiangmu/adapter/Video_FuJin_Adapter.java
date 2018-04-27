@@ -8,22 +8,22 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.liufan.xiangmu.R;
-import com.example.liufan.xiangmu.shipin.bean.Video_ReMenBean;
+import com.example.liufan.xiangmu.shipin.bean.Video_FuJinBean;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 import java.util.Random;
 
 /**
- * author:Created by WangZhiQiang on 2018/4/24.
+ * author:Created by WangZhiQiang on 2018/4/27.
  */
 
-public class Video_ReMen_Adapter extends RecyclerView.Adapter<Video_ReMen_Adapter.Myviewholber> {
+public class Video_FuJin_Adapter extends RecyclerView.Adapter<Video_FuJin_Adapter.Myviewholber> {
 
     Context context;
-    List<Video_ReMenBean.DataBean>  data;
+    List<Video_FuJinBean.DataBean> data;
     private Itemclick item;
-    public Video_ReMen_Adapter(Context context, List<Video_ReMenBean.DataBean>  data) {
+    public Video_FuJin_Adapter(Context context, List<Video_FuJinBean.DataBean>  data) {
         this.context = context;
         this.data = data;
     }
@@ -35,7 +35,7 @@ public class Video_ReMen_Adapter extends RecyclerView.Adapter<Video_ReMen_Adapte
     }
     @Override
     public void onBindViewHolder(final Myviewholber holder, final int position) {
-        String cover = data.get(position).getCover();
+        String cover = data.get(position).getUser().getIcon();
         if (cover != null) {
             Log.i("哈哈哈哈或",""+cover);
 //            创建将要下载的图片的URI

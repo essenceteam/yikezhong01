@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import com.example.liufan.xiangmu.R;
 import com.example.liufan.xiangmu.activity.Video_ShiPinActivity;
 import com.example.liufan.xiangmu.adapter.Video_ReMen_Adapter;
-import com.example.liufan.xiangmu.shipin.bean.HQSPBean;
+import com.example.liufan.xiangmu.shipin.bean.Video_ReMenBean;
 import com.example.liufan.xiangmu.shipin.presenter.Video_Presenter;
 import com.example.liufan.xiangmu.shipin.view.Video_OnView;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
@@ -30,7 +30,7 @@ public class Video_Remen extends Fragment implements Video_OnView {
     private XRecyclerView video_remen_xrecy;
     private Video_ReMen_Adapter video_remen_adapter;
     private Video_Presenter video_presenter;
-    List<HQSPBean.DataBean> data1 = new ArrayList<>();
+    List<Video_ReMenBean.DataBean> data1 = new ArrayList<>();
     int pager = 1;
     @Nullable
     @Override
@@ -43,16 +43,18 @@ public class Video_Remen extends Fragment implements Video_OnView {
         video_remen_xrecy.setLoadingMoreEnabled(true);
         //https://www.zhaoapi.cn/quarter/getVideos?source=android&appVersion=101&type=1&page=1
         video_presenter = new Video_Presenter(this);
-        video_presenter.getVideo_HQSP("android","101","1",pager+"");
+        //video_presenter.getVideo_HQSP("android","101","11080","1",pager+"");
+        video_presenter.getVideo_ReMen("F59DAFABFD3392862082B61174D823A6","android","101",""+pager);
         video_remen_xrecy.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
-                //清空数据‘
+                //清空数据
                 data1.clear();
                 pager = 1;
+                Log.i("LLLLJIAZAI","刷新");
                 //刷新
                 video_presenter = new Video_Presenter(Video_Remen.this);
-                video_presenter.getVideo_HQSP("android","101","1",pager+"");
+                video_presenter.getVideo_HQSP("android","101","11080","1",pager+"");
                 video_remen_adapter.notifyDataSetChanged();
                 //刷新完成
                 video_remen_xrecy.refreshComplete();
@@ -60,11 +62,12 @@ public class Video_Remen extends Fragment implements Video_OnView {
             @Override
             public void onLoadMore() {
                 pager++;
+                Log.i("LLLLJIAZAI","加载");
                 //加载
                 video_presenter = new Video_Presenter(Video_Remen.this);
-                video_presenter.getVideo_HQSP("android","101","1",pager+"");
+                video_presenter.getVideo_HQSP("android","101","11080","1",pager+"");
                 video_remen_adapter.notifyDataSetChanged();
-                //刷新完成
+                //加载完成
                 video_remen_xrecy.loadMoreComplete();
             }
         });
@@ -79,19 +82,27 @@ public class Video_Remen extends Fragment implements Video_OnView {
     @Override
     public void onSuccess(Object object) {
         //
-        HQSPBean hqspBean = (HQSPBean) object;
-        List<HQSPBean.DataBean> data = hqspBean.getData();
+        Video_ReMenBean video_reMenBean = (Video_ReMenBean) object;
+        List<Video_ReMenBean.DataBean> data = video_reMenBean.getData();
         data1.addAll(data);
         //适配器
         video_remen_adapter = new Video_ReMen_Adapter(getActivity(),data1);
         video_remen_xrecy.setAdapter(video_remen_adapter);
+        //设置item之间的间隔
+//        SpacesItemDecoration decoration=new SpacesItemDecoration(16);
+//        video_remen_xrecy.addItemDecoration(decoration);
+
         video_remen_adapter.onItemClick(new Video_ReMen_Adapter.Itemclick() {
             @Override
             public void itemclick(View view, int position) {
                 String videoUrl = data1.get(position).getVideoUrl();
+                String icon = data1.get(position).getUser().getIcon();
+                String nickname = data1.get(position).getUser().getNickname();
                 Log.i("LLLLVideoURL",""+videoUrl);
                 Intent intent = new Intent(getActivity(), Video_ShiPinActivity.class);
                 intent.putExtra("videourl",""+videoUrl);
+                intent.putExtra("icon",""+icon);
+                intent.putExtra("nickname",""+nickname);
                 startActivity(intent);
             }
         });

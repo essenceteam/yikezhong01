@@ -17,8 +17,8 @@ public class Video_Presenter extends BaseVideo_Presenters<Video_OnView> {
         video_Modle = new Video_Modle();
     }
 
-    public void getVideo_HQSP(String source, String appVersion, String type, String page) {
-        video_Modle.getVideo_HQSP(source, appVersion, type, page, new Video_Moudle_hui() {
+    public void getVideo_HQSP(String source, String appVersion,String uid ,String type, String page) {
+        video_Modle.getVideo_HQSP(source, appVersion, uid ,type, page, new Video_Moudle_hui() {
             @Override
             public void onError(String ss) {
 
@@ -31,4 +31,34 @@ public class Video_Presenter extends BaseVideo_Presenters<Video_OnView> {
             }
         });
     }
+
+    public void getVideo_ReMen(String token,String source, String appVersion, String page){
+        video_Modle.getVideo_ReMen(token, source, appVersion, page, new Video_Moudle_hui() {
+            @Override
+            public void onError(String ss) {
+
+            }
+
+            @Override
+            public void onSuccess(Object object) {
+                v.onSuccess(object);
+            }
+        });
+    }
+    public void getVideo_FuJin(String token,String source,String appVersion,String latitude,String longitude, String page){
+        video_Modle.getVideo_FuJin(token, source, appVersion, latitude, longitude, page, new Video_Moudle_hui() {
+            @Override
+            public void onError(String ss) {
+
+            }
+
+            @Override
+            public void onSuccess(Object object) {
+                v.onSuccess(object);
+            }
+        });
+    }
+
+
+
 }
