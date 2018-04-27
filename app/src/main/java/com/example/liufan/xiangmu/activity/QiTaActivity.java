@@ -59,7 +59,6 @@ public class QiTaActivity extends BaesActivity implements LoginView{
             public void onClick(View v) {
                 Intent intent =new Intent(QiTaActivity.this,RegisterActivity.class);
                 startActivity(intent);
-//                finish();
 
             }
         });

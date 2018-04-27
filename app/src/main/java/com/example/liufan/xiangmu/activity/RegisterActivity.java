@@ -36,6 +36,7 @@ public class RegisterActivity extends BaesActivity implements RegisterView{
 
     @Override
     public void getdata() {
+        //注册的按钮
         register_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,11 +47,13 @@ public class RegisterActivity extends BaesActivity implements RegisterView{
             }
         });
         back_reg.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                finish();
+            finish();
             }
         });
+        //回退的点击事件
         login_reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

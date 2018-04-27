@@ -44,9 +44,11 @@ public class CreationActivity extends BaesActivity implements View.OnClickListen
         switch (v.getId()){
             //跳转到视频的点击事件
             case R.id.ship_iv:
+
                 break;
             //跳转到段子的点击事件
             case R.id.wenb_iv:
+                
                 break;
                 //回退到上一个页面
             case R.id.qx_te:

@@ -22,13 +22,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
+
         <TextView
+            android:layout_weight="1"
             android:id="@+id/login_reg"
             android:text="已有账号？"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:textColor="#D7DADE" />
+            android:textColor="#D7DADE"
+            android:gravity="right"
+            />
     </LinearLayout>
     <ImageView
         android:layout_width="100dp"

@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-       android:name=".MApp"
+        android:name=".MApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -31,10 +31,11 @@
             android:value="1920" />
 
         <activity android:name=".activity.QiTaActivity" />
-        <activity android:name=".activity.LoginActivity"/>
+        <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.RegisterActivity" />
-        <activity android:name=".activity.CreationActivity"></activity>
-        <activity android:name=".activity.Video_ShiPinActivity"/>
+        <activity android:name=".activity.CreationActivity" />
+        <activity android:name=".activity.Video_ShiPinActivity" />
+        <activity android:name=".activity.PublishanarticleActivity"></activity>
     </application>
 
 </manifest>
