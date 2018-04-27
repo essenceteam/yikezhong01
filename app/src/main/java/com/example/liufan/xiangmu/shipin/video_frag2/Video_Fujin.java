@@ -29,7 +29,7 @@ public class Video_Fujin extends Fragment implements Video_OnView {
 
     private XRecyclerView video_fujin_xrecy;
     private Video_Presenter video_presenter;
-    private Video_FuJin_Adapter video_remen_adapter;
+    private Video_FuJin_Adapter video_fuJin_adapter;
     List<Video_FuJinBean.DataBean>  data1 = new ArrayList<>();
     int pager = 1;
     @Nullable
@@ -39,13 +39,13 @@ public class Video_Fujin extends Fragment implements Video_OnView {
         video_fujin_xrecy = view.findViewById(R.id.video_fujin_xrecy);
         video_fujin_xrecy.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
         //允许刷新，加载更多
-        video_fujin_xrecy.setPullRefreshEnabled(true);
-        video_fujin_xrecy.setLoadingMoreEnabled(true);
+//        video_fujin_xrecy.setPullRefreshEnabled(true);
+//        video_fujin_xrecy.setLoadingMoreEnabled(true);
         //https://www.zhaoapi.cn/quarter/getVideos?source=android&appVersion=101&type=1&page=1
         video_presenter = new Video_Presenter(this);
         //video_presenter.getVideo_HQSP("android","101","11080","1",pager+"");
         //video_presenter.getVideo_ReMen("F59DAFABFD3392862082B61174D823A6","android","101",""+pager);
-        video_presenter.getVideo_FuJin("F59DAFABFD3392862082B61174D823A6","android","101","40.04710","116.3064",""+pager);
+        video_presenter.getVideo_FuJin("F59DAFABFD3392862082B61174D823A6","android","101","1","1",""+pager);
         video_fujin_xrecy.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
@@ -55,19 +55,19 @@ public class Video_Fujin extends Fragment implements Video_OnView {
                 Log.i("LLLLJIAZAI","刷新");
                 //刷新
                 video_presenter = new Video_Presenter(Video_Fujin.this);
-                video_presenter.getVideo_HQSP("android","101","11080","1",pager+"");
-                video_remen_adapter.notifyDataSetChanged();
+                video_presenter.getVideo_FuJin("F59DAFABFD3392862082B61174D823A6","android","101","1","1",""+pager);
+                video_fuJin_adapter.notifyDataSetChanged();
                 //刷新完成
                 video_fujin_xrecy.refreshComplete();
             }
             @Override
             public void onLoadMore() {
-                pager++;
                 Log.i("LLLLJIAZAI","加载");
+                pager++;
                 //加载
                 video_presenter = new Video_Presenter(Video_Fujin.this);
-                video_presenter.getVideo_HQSP("android","101","11080","1",pager+"");
-                video_remen_adapter.notifyDataSetChanged();
+                video_presenter.getVideo_FuJin("F59DAFABFD3392862082B61174D823A6","android","101","1","1",""+pager);
+                video_fuJin_adapter.notifyDataSetChanged();
                 //加载完成
                 video_fujin_xrecy.loadMoreComplete();
             }
@@ -87,13 +87,13 @@ public class Video_Fujin extends Fragment implements Video_OnView {
         List<Video_FuJinBean.DataBean> data = video_fuJinBean.getData();
         data1.addAll(data);
         //适配器
-        video_remen_adapter = new Video_FuJin_Adapter(getActivity(),data1);
-        video_fujin_xrecy.setAdapter(video_remen_adapter);
+        video_fuJin_adapter = new Video_FuJin_Adapter(getActivity(),data1);
+        video_fujin_xrecy.setAdapter(video_fuJin_adapter);
         //设置item之间的间隔
 //        SpacesItemDecoration decoration=new SpacesItemDecoration(16);
 //        video_remen_xrecy.addItemDecoration(decoration);
 
-        video_remen_adapter.onItemClick(new Video_FuJin_Adapter.Itemclick() {
+        video_fuJin_adapter.onItemClick(new Video_FuJin_Adapter.Itemclick() {
             @Override
             public void itemclick(View view, int position) {
                 String videoUrl = data1.get(position).getVideoUrl();

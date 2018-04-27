@@ -54,7 +54,7 @@ public class Video_Remen extends Fragment implements Video_OnView {
                 Log.i("LLLLJIAZAI","刷新");
                 //刷新
                 video_presenter = new Video_Presenter(Video_Remen.this);
-                video_presenter.getVideo_HQSP("android","101","11080","1",pager+"");
+                video_presenter.getVideo_ReMen("F59DAFABFD3392862082B61174D823A6","android","101",""+pager);
                 video_remen_adapter.notifyDataSetChanged();
                 //刷新完成
                 video_remen_xrecy.refreshComplete();
@@ -65,7 +65,7 @@ public class Video_Remen extends Fragment implements Video_OnView {
                 Log.i("LLLLJIAZAI","加载");
                 //加载
                 video_presenter = new Video_Presenter(Video_Remen.this);
-                video_presenter.getVideo_HQSP("android","101","11080","1",pager+"");
+                video_presenter.getVideo_ReMen("F59DAFABFD3392862082B61174D823A6","android","101",""+pager);
                 video_remen_adapter.notifyDataSetChanged();
                 //加载完成
                 video_remen_xrecy.loadMoreComplete();

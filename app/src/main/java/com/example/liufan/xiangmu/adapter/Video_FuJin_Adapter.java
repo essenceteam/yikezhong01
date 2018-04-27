@@ -44,8 +44,8 @@ public class Video_FuJin_Adapter extends RecyclerView.Adapter<Video_FuJin_Adapte
         //修改瀑布流随机高度
         Random random = new Random();
         ViewGroup.LayoutParams layoutParams = holder.video_remen_xrecy_iv.getLayoutParams();
-        layoutParams.height=random.nextInt(200)+100;
-        layoutParams.width = 200;
+        layoutParams.height=random.nextInt(200)+150;
+        //layoutParams.width = 200;
         holder.video_remen_xrecy_iv.setLayoutParams(layoutParams);
         //item为接口的变量名
         if (item!=null){
