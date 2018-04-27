@@ -1,10 +1,12 @@
 package com.example.liufan.xiangmu.activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.liufan.xiangmu.R;
 import com.example.liufan.xiangmu.baes.BaesActivity;
@@ -78,5 +80,14 @@ public class QiTaActivity extends BaesActivity implements LoginView{
     @Override
     public void ViewLoadSuccess(LoginBean loginBean) {
         //获取登录注册的结果
+        int uid = loginBean.getData().getUid();
+        String token = loginBean.getData().getToken();
+        SharedPreferences sharedPreferences = getSharedPreferences("USER",0);
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+        edit.putBoolean("bo",false);
+        edit.putInt("uid",uid);
+        edit.putString("token",token);
+        edit.commit();
+        Toast.makeText(this, loginBean.getCode(), Toast.LENGTH_SHORT).show();
     }
 }
