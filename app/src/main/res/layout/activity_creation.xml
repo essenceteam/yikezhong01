@@ -20,7 +20,7 @@
     android:textSize="25dp"
     android:id="@+id/qx_te"/>
     <TextView
-        android:layout_width="100dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="创作"
         android:textSize="25dp"

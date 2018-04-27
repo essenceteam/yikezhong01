@@ -53,7 +53,7 @@ public class Remen_Fragment extends Fragment {
         getdata1();
         //TuiJian_ReMen_Baseadapter TuiJian_ReMen_Baseadapter=new TuiJian_ReMen_Baseadapter ();
         //remenrev1.setAdapter (TuiJian_ReMen_Baseadapter);
-        
+
         TuiJian_ReMen_Baseadapter TuiJian_ReMen_Baseadapter=new TuiJian_ReMen_Baseadapter ();
         remenrev1.setAdapter (TuiJian_ReMen_Baseadapter);
 
