@@ -53,10 +53,10 @@ public class IModle {
                 });
     }
     //视频
-    public void  getvidio(String android, int page, final ShiPinModle ShiPinModle){
+    public void  getvidio(String android, int page,String ty, final ShiPinModle ShiPinModle){
         RetrofitUtil inData = RetrofitUtil.getInData ();
         TuijianApisevice retrofit = inData.getRetrofit (API.Url, TuijianApisevice.class);
-        Observable<TuijianshipinBean> getparmter = retrofit.getparmter (android, "101", page);
+        Observable<TuijianshipinBean> getparmter = retrofit.getparmter (android, "101", page,ty);
         getparmter.subscribeOn (Schedulers.io ())
                 .observeOn (AndroidSchedulers.mainThread ())
                 .subscribe (new Observer<TuijianshipinBean> () {

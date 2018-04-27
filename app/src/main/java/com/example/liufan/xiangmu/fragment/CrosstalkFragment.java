@@ -21,8 +21,6 @@ import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import retrofit2.http.HEAD;
-
 /**
  * Created by liufan on 2018/4/24.
  */
@@ -53,6 +51,24 @@ public class CrosstalkFragment extends Fragment implements DuanZiIView{
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(OrientationHelper.VERTICAL);
         mXrlv.setLayoutManager(layoutManager);
+
+        mXrlv.setLoadingListener(new XRecyclerView.LoadingListener() {
+            @Override
+            public void onRefresh() {
+                page=1;
+                iPresenter.getDZdata(API.Url,page);
+                mXrlv.refreshComplete();
+
+            }
+
+            @Override
+            public void onLoadMore() {
+                page++;
+                iPresenter.getDZdata(API.Url,page);
+                mXrlv.loadMoreComplete();
+            }
+        });
+
     }
 
     @Override

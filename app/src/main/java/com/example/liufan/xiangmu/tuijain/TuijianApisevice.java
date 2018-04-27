@@ -12,5 +12,5 @@ import retrofit2.http.Query;
 
 public interface TuijianApisevice {
     @GET("quarter/getVideos")
-    Observable<TuijianshipinBean> getparmter(@Query ("source")String android, @Query ("appVersion")String ve, @Query ("page")int page);
+    Observable<TuijianshipinBean> getparmter(@Query ("source")String android, @Query ("appVersion")String ve, @Query ("page")int page,@Query ("type")String ty);
 }

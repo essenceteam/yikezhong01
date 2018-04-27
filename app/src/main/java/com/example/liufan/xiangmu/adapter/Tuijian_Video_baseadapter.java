@@ -50,9 +50,9 @@ public class Tuijian_Video_baseadapter extends XRecyclerView.Adapter<Tuijian_Vid
         }else{
             Picasso.with (context).load (icon).into (holder.re_men_item_sdv);
         }
-        holder.re_men_item_jiecao.setUp (list.get (position).getCover (),JZVideoPlayerStandard.SCREEN_LAYOUT_NORMAL,"");
+        holder.re_men_item_jiecao.setUp (list.get (position).getVideoUrl (),JZVideoPlayerStandard.SCREEN_LAYOUT_NORMAL,"");
         Picasso.with (context)
-                .load (icon)
+                .load (list.get (position).getCover ())
                 .into (holder.re_men_item_jiecao.thumbImageView);
 
     }
