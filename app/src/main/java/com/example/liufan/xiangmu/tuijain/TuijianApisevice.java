@@ -1,5 +1,6 @@
 package com.example.liufan.xiangmu.tuijain;
 
+import com.example.liufan.xiangmu.tuijain.modle.Bean.TuijianguanzhuBean;
 import com.example.liufan.xiangmu.tuijain.modle.Bean.TuijianshipinBean;
 
 import io.reactivex.Observable;
@@ -13,4 +14,6 @@ import retrofit2.http.Query;
 public interface TuijianApisevice {
     @GET("quarter/getVideos")
     Observable<TuijianshipinBean> getparmter(@Query ("source")String android, @Query ("appVersion")String ve, @Query ("page")int page,@Query ("type")String ty);
+    @GET("quarter/getVideos")
+    Observable<TuijianguanzhuBean> getparmter1(@Query ("source")String android, @Query ("appVersion")String ve, @Query ("page")int page, @Query ("type")String ty, @Query ("uid")String uid);
 }

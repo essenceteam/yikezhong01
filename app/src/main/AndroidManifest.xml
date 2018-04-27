@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name=".MApp"
@@ -50,6 +50,7 @@
         <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".activity.CreationActivity" />
         <activity android:name=".activity.QQLoginActivity"/>
+        <activity android:name=".activity.DZXQActivity"/>
         <activity android:name=".activity.Video_ShiPinActivity" />
         <activity android:name=".activity.PublishanarticleActivity"></activity>
         <activity android:name=".activity.Video_YongHuShiPin"/>
