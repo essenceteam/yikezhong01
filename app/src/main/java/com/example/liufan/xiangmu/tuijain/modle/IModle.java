@@ -5,6 +5,7 @@ import com.example.liufan.xiangmu.api.API;
 import com.example.liufan.xiangmu.api.ApiService;
 import com.example.liufan.xiangmu.tuijain.TuijianApisevice;
 import com.example.liufan.xiangmu.tuijain.modle.Bean.LunBoBean;
+import com.example.liufan.xiangmu.tuijain.modle.Bean.TuijianguanzhuBean;
 import com.example.liufan.xiangmu.tuijain.modle.Bean.TuijianshipinBean;
 import com.example.liufan.xiangmu.util.RetrofitUtil;
 import io.reactivex.Observable;
@@ -52,7 +53,7 @@ public class IModle {
                     }
                 });
     }
-    //视频
+    //热门视频
     public void  getvidio(String android, int page,String ty, final ShiPinModle ShiPinModle){
         RetrofitUtil inData = RetrofitUtil.getInData ();
         TuijianApisevice retrofit = inData.getRetrofit (API.Url, TuijianApisevice.class);
@@ -76,6 +77,40 @@ public class IModle {
                     public void onError(Throwable e) {
                         if(ShiPinModle!=null){
                             ShiPinModle.TuijianShiPinOnError (e);
+                        }
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
+    }
+    //关注视频
+    public void  getvidio1(String android, int page,String ty,String uid, final GuanzhuModle GuanzhuModle){
+        RetrofitUtil inData = RetrofitUtil.getInData ();
+        TuijianApisevice retrofit = inData.getRetrofit (API.Url, TuijianApisevice.class);
+        Observable<TuijianguanzhuBean> getparmter = retrofit.getparmter1 (android, "101", page,ty,uid);
+        getparmter.subscribeOn (Schedulers.io ())
+                .observeOn (AndroidSchedulers.mainThread ())
+                .subscribe (new Observer<TuijianguanzhuBean> () {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(TuijianguanzhuBean value) {
+                        if (GuanzhuModle!=null){
+                            GuanzhuModle.TuijianShiPinOnSuccess (value);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        if (GuanzhuModle!=null){
+                            GuanzhuModle.TuijianShiPinOnError (e);
                         }
                     }
 

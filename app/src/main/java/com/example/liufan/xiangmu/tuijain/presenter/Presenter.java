@@ -1,8 +1,11 @@
 package com.example.liufan.xiangmu.tuijain.presenter;
 
+import com.example.liufan.xiangmu.tuijain.View.IGuanzhuView;
 import com.example.liufan.xiangmu.tuijain.View.IShiPinView;
 import com.example.liufan.xiangmu.tuijain.modle.Bean.LunBoBean;
+import com.example.liufan.xiangmu.tuijain.modle.Bean.TuijianguanzhuBean;
 import com.example.liufan.xiangmu.tuijain.modle.Bean.TuijianshipinBean;
+import com.example.liufan.xiangmu.tuijain.modle.GuanzhuModle;
 import com.example.liufan.xiangmu.tuijain.modle.IModle;
 import com.example.liufan.xiangmu.tuijain.modle.Modle;
 import com.example.liufan.xiangmu.tuijain.View.ItuijianView;
@@ -47,6 +50,25 @@ public class Presenter {
             public void TuijianShiPinOnError(Throwable Throwable) {
                 if(IShiPinView!=null){
                     IShiPinView.TuijianShiPinOnError (Throwable);
+                }
+            }
+        });
+
+    }
+    //关注视频
+    public void getvrdiopresenter1(String android , int page,String ty,String uid, final IGuanzhuView IGuanzhuView){
+        IModle.getvidio1 (android, page, ty, uid, new GuanzhuModle () {
+            @Override
+            public void TuijianShiPinOnSuccess(TuijianguanzhuBean TuijianguanzhuBean) {
+                if(IGuanzhuView!=null){
+                    IGuanzhuView.TuijianShiPinOnSuccess (TuijianguanzhuBean);
+                }
+            }
+
+            @Override
+            public void TuijianShiPinOnError(Throwable Throwable) {
+                if(IGuanzhuView!=null){
+                    IGuanzhuView.TuijianShiPinOnError (Throwable);
                 }
             }
         });
