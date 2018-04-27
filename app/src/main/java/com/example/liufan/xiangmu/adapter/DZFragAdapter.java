@@ -1,6 +1,7 @@
 package com.example.liufan.xiangmu.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.liufan.xiangmu.R;
+import com.example.liufan.xiangmu.activity.DZXQActivity;
 import com.example.liufan.xiangmu.duanzi.bean.DZListBean;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.controller.AbstractDraweeController;
@@ -51,6 +53,13 @@ public class DZFragAdapter extends RecyclerView.Adapter<DZFragAdapter.DZviewHold
         holder.nameTv.setText(list.get(position).getUser().getNickname()+"");
         holder.dateTv.setText(list.get(position).getCreateTime());
         holder.getShuoshuoTv().setText(list.get(position).getContent());
+        holder.titleHead.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                context.startActivity(new Intent(context, DZXQActivity.class));
+            }
+        });
+
 
     }
 
