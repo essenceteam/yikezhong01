@@ -129,7 +129,7 @@ public class PublishanarticleActivity extends BaesActivity implements View.OnCli
                     bt1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            ImageSelectorActivity.start(PublishanarticleActivity.this, 5, 2, true, true, true);
+                            ImageSelectorActivity.start(PublishanarticleActivity.this, 5, ImageSelectorActivity.MODE_MULTIPLE, true, true, true);
                             Intent intent = new Intent(Intent.ACTION_PICK);
                             intent.setType("image/*");
                             startActivityForResult(intent, 1);
@@ -186,7 +186,6 @@ public class PublishanarticleActivity extends BaesActivity implements View.OnCli
                 }
                 IPresenter iPresenter = new IPresenter();
                 iPresenter.Publishanarticle(new IModle(), API.Url, uid + "", string, token, listParts, this);
-
             }
         } else {
             //提示用户

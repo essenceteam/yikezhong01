@@ -6,6 +6,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -29,6 +30,11 @@ public class MainActivity extends BaesActivity {
     private ImageView head_iv1,head_iv;
     private DrawerLayout draw;
     private SimpleDraweeView sDraw;
+    private TextView qianming_tv;
+    private LinearLayout guanzhu_liner;
+    private LinearLayout shoucang_liner;
+    private LinearLayout sousuo_liner;
+    private LinearLayout tongzhi_liner;
 
     @Override
     public int getlayout() {
@@ -39,10 +45,25 @@ public class MainActivity extends BaesActivity {
     public void getinit() {
         rg = findViewById(R.id.rg);
         head_te = findViewById(R.id.head_te);
+        //头像
         head_iv1 = findViewById(R.id.head_iv1);
+        //创作
         head_iv = findViewById(R.id.head_iv);
         draw = findViewById(R.id.draw);
         sDraw = findViewById(R.id.smenu_head);
+        //编辑
+        qianming_tv = findViewById(R.id.qianming_tv);
+        //我的关注
+        guanzhu_liner = findViewById(R.id.guanzhu_liner);
+        //我的收藏
+        shoucang_liner = findViewById(R.id.shoucang_liner);
+        //搜索好友
+        sousuo_liner = findViewById(R.id.sousuo_liner);
+        //消息通知
+        tongzhi_liner = findViewById(R.id.tongzhi_liner);
+        //夜间模式
+        //我的作品
+        //设置
     }
 
     @Override
@@ -103,7 +124,7 @@ public class MainActivity extends BaesActivity {
                 startActivity(intent);
             }
         });
-
+       //侧滑的点击事件
         head_iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
