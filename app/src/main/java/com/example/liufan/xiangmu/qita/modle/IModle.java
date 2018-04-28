@@ -2,6 +2,7 @@ package com.example.liufan.xiangmu.qita.modle;
 
 import com.example.liufan.xiangmu.api.API;
 import com.example.liufan.xiangmu.api.ApiService;
+import com.example.liufan.xiangmu.bean.AttentionBean;
 import com.example.liufan.xiangmu.bean.LoginBean;
 import com.example.liufan.xiangmu.bean.Publishan;
 import com.example.liufan.xiangmu.bean.RegisterBean;
@@ -109,6 +110,36 @@ public class IModle implements Modle{
                     @Override
                     public void onError(Throwable e) {
                         modle3.PublishanarticleError(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+  //我的关注
+    @Override
+    public void Myattention(String url, String uid, String token, final Modle4 modle4) {
+        inData = RetrofitUtil.getInData();
+        ApiService retrofit = inData.getRetrofit(url, ApiService.class);
+        final Observable<AttentionBean> android = retrofit.Attention("android", uid, token, "101");
+        android.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<AttentionBean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(AttentionBean value) {
+                        modle4.AttentionSuccess(value);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        modle4.AttentionError(e.getMessage());
                     }
 
                     @Override

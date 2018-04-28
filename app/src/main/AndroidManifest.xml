@@ -27,17 +27,21 @@
         <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:launchMode="singleTask"
-            android:noHistory="true" >
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data android:scheme="tencent1105602574" /> <!-- 开放平台获取的APPID -->
             </intent-filter>
         </activity>
-        <activity android:name="com.tencent.connect.common.AssistActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
         <meta-data
             android:name="design_width"
             android:value="1080" />
@@ -49,14 +53,15 @@
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".activity.CreationActivity" />
-        <activity android:name=".activity.QQLoginActivity"/>
-        <activity android:name=".activity.DZXQActivity"/>
+        <activity android:name=".activity.QQLoginActivity" />
+        <activity android:name=".activity.DZXQActivity" />
         <activity android:name=".activity.Video_ShiPinActivity" />
-        <activity android:name=".activity.PublishanarticleActivity"></activity>
-        <activity android:name=".activity.Video_YongHuShiPin"/>
-        <activity android:name="com.yongchun.library.view.ImageSelectorActivity"/>
-        <activity android:name="com.yongchun.library.view.ImagePreviewActivity"/>
-        <activity android:name="com.yongchun.library.view.ImageCropActivity"/>
+        <activity android:name=".activity.PublishanarticleActivity" />
+        <activity android:name=".activity.Video_YongHuShiPin" />
+        <activity android:name="com.yongchun.library.view.ImageSelectorActivity" />
+        <activity android:name="com.yongchun.library.view.ImagePreviewActivity" />
+        <activity android:name="com.yongchun.library.view.ImageCropActivity" />
+        <activity android:name=".activity.MyAttentionActivity"></activity>
     </application>
 
 </manifest>

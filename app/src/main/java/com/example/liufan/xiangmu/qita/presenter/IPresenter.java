@@ -1,9 +1,11 @@
 package com.example.liufan.xiangmu.qita.presenter;
 
+import com.example.liufan.xiangmu.activity.MyAttentionActivity;
 import com.example.liufan.xiangmu.activity.PublishanarticleActivity;
 import com.example.liufan.xiangmu.activity.QiTaActivity;
 import com.example.liufan.xiangmu.activity.RegisterActivity;
 import com.example.liufan.xiangmu.api.API;
+import com.example.liufan.xiangmu.bean.AttentionBean;
 import com.example.liufan.xiangmu.bean.LoginBean;
 import com.example.liufan.xiangmu.bean.Publishan;
 import com.example.liufan.xiangmu.bean.RegisterBean;
@@ -11,6 +13,7 @@ import com.example.liufan.xiangmu.qita.modle.IModle;
 import com.example.liufan.xiangmu.qita.modle.Modle1;
 import com.example.liufan.xiangmu.qita.modle.Modle2;
 import com.example.liufan.xiangmu.qita.modle.Modle3;
+import com.example.liufan.xiangmu.qita.modle.Modle4;
 
 import java.util.List;
 
@@ -67,5 +70,20 @@ public class IPresenter implements Presenter {
                 publishanarticleActivity.PuilshanSuccess((Publishan) object);
             }
         });
+    }
+  //我的关注
+    @Override
+    public void Attention(IModle iModle, String url, String uid, String token, final MyAttentionActivity myAttentionActivity) {
+          iModle.Myattention(url, uid, token, new Modle4() {
+              @Override
+              public void AttentionError(String ss) {
+                  myAttentionActivity.AttentionError(ss);
+              }
+
+              @Override
+              public void AttentionSuccess(Object object) {
+                  myAttentionActivity.AttentionSuccess((AttentionBean) object);
+              }
+          });
     }
 }

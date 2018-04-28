@@ -1,5 +1,6 @@
 package com.example.liufan.xiangmu.qita.presenter;
 
+import com.example.liufan.xiangmu.activity.MyAttentionActivity;
 import com.example.liufan.xiangmu.activity.PublishanarticleActivity;
 import com.example.liufan.xiangmu.activity.QiTaActivity;
 import com.example.liufan.xiangmu.activity.RegisterActivity;
@@ -21,4 +22,6 @@ public interface Presenter {
   void Register(IModle iModle, String mobile, String password , RegisterActivity registerActivity);
   //发表的方法
   void Publishanarticle(IModle iModle,String url, String uid, String content, String token, List<MultipartBody.Part> file, PublishanarticleActivity publishanarticleActivity);
+  //我的关注
+  void Attention(IModle iModle, String url, String uid, String token, MyAttentionActivity myAttentionActivity);
 }
