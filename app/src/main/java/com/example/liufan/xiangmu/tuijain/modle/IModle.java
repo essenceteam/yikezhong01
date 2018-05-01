@@ -7,6 +7,7 @@ import com.example.liufan.xiangmu.tuijain.TuijianApisevice;
 import com.example.liufan.xiangmu.tuijain.modle.Bean.LunBoBean;
 import com.example.liufan.xiangmu.tuijain.modle.Bean.TuijianguanzhuBean;
 import com.example.liufan.xiangmu.tuijain.modle.Bean.TuijianshipinBean;
+import com.example.liufan.xiangmu.tuijain.modle.Bean.Tuijianyonghu_Xiangqing_bean;
 import com.example.liufan.xiangmu.util.RetrofitUtil;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
@@ -111,6 +112,40 @@ public class IModle {
                     public void onError(Throwable e) {
                         if (GuanzhuModle!=null){
                             GuanzhuModle.TuijianShiPinOnError (e);
+                        }
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
+    }
+    //用户详情
+    public void  getxiangqing(String android, int page, String uid, final Tuijian_xiangqing_Imdle Tuijian_xiangqing_Imdle){
+        RetrofitUtil inData = RetrofitUtil.getInData ();
+        TuijianApisevice retrofit = inData.getRetrofit (API.Url, TuijianApisevice.class);
+        Observable<Tuijianyonghu_Xiangqing_bean> xiangqing = retrofit.getparmter2 (android, "101", page, uid);
+        xiangqing.subscribeOn (Schedulers.io ())
+                .observeOn (AndroidSchedulers.mainThread ())
+                .subscribe (new Observer<Tuijianyonghu_Xiangqing_bean> () {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(Tuijianyonghu_Xiangqing_bean value) {
+                        if(Tuijian_xiangqing_Imdle!=null){
+                            Tuijian_xiangqing_Imdle.Tuijian_xiangqing_OnSuccess (value);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        if(Tuijian_xiangqing_Imdle!=null){
+                            Tuijian_xiangqing_Imdle.Tuijian_xiangqing_OnError (e);
                         }
                     }
 

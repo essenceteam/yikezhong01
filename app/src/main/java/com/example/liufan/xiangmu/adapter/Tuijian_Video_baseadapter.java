@@ -1,12 +1,14 @@
 package com.example.liufan.xiangmu.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.example.liufan.xiangmu.R;
+import com.example.liufan.xiangmu.activity.Tuijian_Xiangqing_Activity;
 import com.example.liufan.xiangmu.tuijain.modle.Bean.TuijianshipinBean;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
@@ -38,18 +40,28 @@ public class Tuijian_Video_baseadapter extends XRecyclerView.Adapter<Tuijian_Vid
     }
 
     @Override
-    public void onBindViewHolder(MyViewHodler holder, int position) {
+    public void onBindViewHolder(MyViewHodler holder, final int position) {
         TuijianshipinBean.DataBean.UserBean user = list.get (position).getUser ();
         holder.re_men_item_name.setText (user.getNickname ());
         holder.re_men_item_time.setText (list.get (position).getCreateTime ());
         holder.re_men_item_title.setText (list.get (position).getWorkDesc ()+"");
-        String icon = user.getIcon ();
+        final String icon = user.getIcon ();
         if(icon.contains ("|")){
             String[] split = icon.split ("\\|");
             Picasso.with (context).load (split[0]).into (holder.re_men_item_sdv);
         }else{
             Picasso.with (context).load (icon).into (holder.re_men_item_sdv);
         }
+       holder.re_men_item_sdv.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View view) {
+               int uid = list.get (position).getUid ();
+                Intent Intent=new Intent (context, Tuijian_Xiangqing_Activity.class);
+                Intent.putExtra ("uid",uid+"");
+                Intent.putExtra ("img",icon);
+                context.startActivity (Intent);
+            }
+        });
         holder.re_men_item_jiecao.setUp (list.get (position).getVideoUrl (),JZVideoPlayerStandard.SCREEN_LAYOUT_NORMAL,"");
         Picasso.with (context)
                 .load (list.get (position).getCover ())
@@ -61,7 +73,6 @@ public class Tuijian_Video_baseadapter extends XRecyclerView.Adapter<Tuijian_Vid
     public int getItemCount() {
         return list.size ();
     }
-
     class MyViewHodler extends RecyclerView.ViewHolder {
         public TextView re_men_item_name;
         public TextView re_men_item_time;

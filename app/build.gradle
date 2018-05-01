@@ -57,7 +57,7 @@ dependencies {
     compile 'com.android.support:design:26.1.0'
     //瀑布流的图片边框
     compile 'com.android.support:cardview-v7:26.1.0'
-   //发布多图选择
+    //发布多图选择
     implementation project(':swiperefreshlayoutlibrary')
     //多图片
     implementation project(':library')

@@ -102,7 +102,7 @@ public class GuanZhu_Fragment extends Fragment {
     //视频加载
     private void getdata1(int page,int userInt) {
 
-            Presenter.getvrdiopresenter1 ("android", page, "1", userInt+"", new IGuanzhuView () {
+            Presenter.getvrdiopresenter1 ("android", page, "1", +userInt+"", new IGuanzhuView () {
                 @Override
                 public void TuijianShiPinOnSuccess(TuijianguanzhuBean TuijianguanzhuBean) {
                     data = TuijianguanzhuBean.getData ();
