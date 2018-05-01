@@ -62,6 +62,8 @@
         <activity android:name="com.yongchun.library.view.ImagePreviewActivity" />
         <activity android:name="com.yongchun.library.view.ImageCropActivity" />
         <activity android:name=".activity.Tuijian_Xiangqing_Activity"></activity>
+        <activity android:name=".activity.MyAttentionActivity"></activity>
+
     </application>
 
 </manifest>

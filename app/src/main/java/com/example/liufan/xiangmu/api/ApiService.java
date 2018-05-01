@@ -1,5 +1,6 @@
 package com.example.liufan.xiangmu.api;
 
+import com.example.liufan.xiangmu.bean.AttentionBean;
 import com.example.liufan.xiangmu.bean.LoginBean;
 import com.example.liufan.xiangmu.bean.Publishan;
 import com.example.liufan.xiangmu.bean.RegisterBean;
@@ -39,4 +40,8 @@ public interface ApiService {
     @Multipart
     @POST("quarter/publishJoke")
     Observable<Publishan> Publishanarticle(@Query("source") String android, @Query("uid") String uid, @Query("content") String content, @Query("token") String token, @Query("appVersion") String appVersion, @Part List<MultipartBody.Part> file);
+    //我的关注
+    //注册接口
+    @GET("quarter/getFollowUsers")
+    Observable<AttentionBean> Attention(@Query("source") String android, @Query("uid") String uid, @Query("token") String token, @Query("appVersion") String appVersion);
 }

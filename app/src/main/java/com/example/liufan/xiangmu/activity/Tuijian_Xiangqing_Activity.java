@@ -3,11 +3,13 @@ package com.example.liufan.xiangmu.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.liufan.xiangmu.R;
+import com.example.liufan.xiangmu.adapter.Tuijian_xiangqing_baseadapter;
 import com.example.liufan.xiangmu.tuijain.View.IXiangqing;
 import com.example.liufan.xiangmu.tuijain.modle.Bean.Tuijianyonghu_Xiangqing_bean;
 import com.example.liufan.xiangmu.tuijain.presenter.Presenter;
@@ -56,16 +58,17 @@ public class Tuijian_Xiangqing_Activity extends AppCompatActivity {
         x_v_shiping = findViewById (R.id.x_v_shiping);
     }
     public void getdata1(){
+        x_v_shiping.setLayoutManager (new LinearLayoutManager (Tuijian_Xiangqing_Activity.this));
         Presenter Presenter=new Presenter ();
         Presenter.getxiangqingpresenter ("android", page, uid, new IXiangqing () {
-
-            private String cover;
             private List<Tuijianyonghu_Xiangqing_bean.DataBean> data;
-
             @Override
             public void Tuijian_xiangqing_OnSuccess(Tuijianyonghu_Xiangqing_bean Tuijianyonghu_Xiangqing_bean) {
                 data = Tuijianyonghu_Xiangqing_bean.getData ();
                 Log.i ("详情",data.get (0).getCover ());
+                Tuijian_xiangqing_baseadapter Tuijian_xiangqing_baseadapter=new Tuijian_xiangqing_baseadapter (Tuijian_Xiangqing_Activity.this,data);
+                x_v_shiping.setAdapter (Tuijian_xiangqing_baseadapter);
+
 
             }
 

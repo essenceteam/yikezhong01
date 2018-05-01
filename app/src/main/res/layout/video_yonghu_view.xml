@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context="com.example.liufan.xiangmu.activity.Tuijian_Xiangqing_Activity">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="300px"
-        android:background="@drawable/ic_hgg"/>
+        android:background="@drawable/timg"/>
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_fanhui"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/raw_1500023215"
+        android:id="@+id/video_yonghu_fanhui"
         android:padding="26px"/>
     <TextView
         android:layout_width="wrap_content"
@@ -21,58 +22,59 @@
         android:layout_centerHorizontal="true"
         android:textSize="34px"
         android:layout_marginTop="26px"
-        android:textColor="#ffff"
+        android:textColor="#FFFFFF"
         />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_fx111"
         android:layout_alignParentRight="true"
+        android:id="@+id/video_yonghu_fenxiang"
         android:padding="20px"
         />
-    <ImageView
+    <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/sdv_3"
         android:layout_width="150px"
         android:layout_height="150px"
+        app:roundedCornerRadius="100px"
         android:layout_marginLeft="50px"
         android:layout_marginTop="230px"
-        android:src="@mipmap/ic_launcher_round"
         />
     <TextView
         android:layout_marginLeft="20px"
         android:layout_toRightOf="@+id/sdv_3"
         android:layout_marginTop="315px"
-        android:id="@+id/t_fs"
+        android:id="@+id/video_yonghu_fensi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="18595447  粉丝"
         />
     <TextView
-        android:layout_toRightOf="@+id/t_fs"
+        android:layout_toRightOf="@+id/video_yonghu_fensi"
         android:layout_marginTop="315px"
         android:layout_marginLeft="25px"
-        android:id="@+id/t_s"
+        android:id="@+id/video_yonghu_fengexian"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="|"
         />
-
     <TextView
-        android:id="@+id/t_gz"
+        android:layout_marginLeft="20px"
+        android:layout_toRightOf="@+id/video_yonghu_fengexian"
+        android:layout_marginTop="315px"
+        android:id="@+id/video_yonghu_guanzu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/jia_gz"
-        android:layout_alignRight="@+id/jia_gz"
-        android:layout_alignTop="@+id/textView"
-        android:text="17  关注" />
+        android:text="17  关注"
+        />
     <TextView
-        android:id="@+id/jia_gz"
+        android:id="@+id/video_yonghu_tianjiaguanzu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="+关注"
         android:background="@drawable/gz_shape"
         android:layout_toRightOf="@id/sdv_3"
-        android:layout_below="@+id/t_gz"
+        android:layout_below="@+id/video_yonghu_guanzu"
         android:paddingTop="12px"
         android:paddingBottom="12px"
         android:paddingLeft="140px"
@@ -88,13 +90,11 @@
         android:background="@drawable/zhan_shape"
         android:layout_alignParentRight="true"
         android:layout_marginTop="320px"
-        android:id="@+id/textView" />
-
+        />
     <com.jcodecraeer.xrecyclerview.XRecyclerView
-        android:id="@+id/x_v_shiping"
+        android:layout_below="@+id/video_yonghu_tianjiaguanzu"
+        android:id="@+id/video_yonghu_xrecy"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/jia_gz" />
+        android:layout_height="match_parent">
+    </com.jcodecraeer.xrecyclerview.XRecyclerView>
 </RelativeLayout>

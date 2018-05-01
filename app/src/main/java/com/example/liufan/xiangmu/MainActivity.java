@@ -6,11 +6,13 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.liufan.xiangmu.activity.CreationActivity;
 import com.example.liufan.xiangmu.activity.LoginActivity;
+import com.example.liufan.xiangmu.activity.MyAttentionActivity;
 import com.example.liufan.xiangmu.baes.BaesActivity;
 import com.example.liufan.xiangmu.fragment.AttentionFragment;
 import com.example.liufan.xiangmu.fragment.CrosstalkFragment;
@@ -26,9 +28,14 @@ public class MainActivity extends BaesActivity {
     private AttentionFragment attentionFragment;
     private CrosstalkFragment crosstalkFragment;
     private TextView head_te;
-    private ImageView head_iv1,head_iv;
+    private ImageView head_iv1, head_iv;
     private DrawerLayout draw;
     private SimpleDraweeView sDraw;
+    private TextView qianming_tv;
+    private LinearLayout guanzhu_liner;
+    private LinearLayout shoucang_liner;
+    private LinearLayout sousuo_liner;
+    private LinearLayout tongzhi_liner;
 
     @Override
     public int getlayout() {
@@ -39,24 +46,39 @@ public class MainActivity extends BaesActivity {
     public void getinit() {
         rg = findViewById(R.id.rg);
         head_te = findViewById(R.id.head_te);
+        //头像
         head_iv1 = findViewById(R.id.head_iv1);
+        //创作
         head_iv = findViewById(R.id.head_iv);
         draw = findViewById(R.id.draw);
         sDraw = findViewById(R.id.smenu_head);
+        //编辑
+        qianming_tv = findViewById(R.id.qianming_tv);
+        //我的关注
+        guanzhu_liner = findViewById(R.id.guanzhu_liner);
+        //我的收藏
+        shoucang_liner = findViewById(R.id.shoucang_liner);
+        //搜索好友
+        sousuo_liner = findViewById(R.id.sousuo_liner);
+        //消息通知
+        tongzhi_liner = findViewById(R.id.tongzhi_liner);
+        //夜间模式
+        //我的作品
+        //设置
     }
 
     @Override
     public void getdata() {
         //这是推荐的fragment
         recommendFragment = new RecommendFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.fl,recommendFragment).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.fl, recommendFragment).commit();
         //RadioGroup的点击事件
         rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 Hined();
                 FragmentManager supportFragmentManager = getSupportFragmentManager();
-                switch (checkedId){
+                switch (checkedId) {
                     case R.id.rb1:
                         //推荐
                         supportFragmentManager.beginTransaction().show(recommendFragment).commit();
@@ -64,30 +86,30 @@ public class MainActivity extends BaesActivity {
                         break;
                     case R.id.rb2:
                         //段子
-                        if (crosstalkFragment==null){
+                        if (crosstalkFragment == null) {
                             crosstalkFragment = new CrosstalkFragment();
-                            supportFragmentManager.beginTransaction().add(R.id.fl,crosstalkFragment).commit();
-                        }else {
+                            supportFragmentManager.beginTransaction().add(R.id.fl, crosstalkFragment).commit();
+                        } else {
                             supportFragmentManager.beginTransaction().show(crosstalkFragment).commit();
                         }
                         head_te.setText("段子");
                         break;
                     case R.id.rb3:
                         //视频
-                        if (videoFragment==null){
+                        if (videoFragment == null) {
                             videoFragment = new VideoFragment();
-                            supportFragmentManager.beginTransaction().add(R.id.fl,videoFragment).commit();
-                        }else {
+                            supportFragmentManager.beginTransaction().add(R.id.fl, videoFragment).commit();
+                        } else {
                             supportFragmentManager.beginTransaction().show(videoFragment).commit();
                         }
                         head_te.setText("视频");
                         break;
                     case R.id.rb4:
                         //关注
-                        if (attentionFragment==null){
+                        if (attentionFragment == null) {
                             attentionFragment = new AttentionFragment();
-                            supportFragmentManager.beginTransaction().add(R.id.fl,attentionFragment).commit();
-                        }else {
+                            supportFragmentManager.beginTransaction().add(R.id.fl, attentionFragment).commit();
+                        } else {
                             supportFragmentManager.beginTransaction().show(attentionFragment).commit();
                         }
                         head_te.setText("关注");
@@ -103,11 +125,11 @@ public class MainActivity extends BaesActivity {
                 startActivity(intent);
             }
         });
-
+        //侧滑的点击事件
         head_iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                draw .openDrawer(Gravity.LEFT);
+                draw.openDrawer(Gravity.LEFT);
             }
         });
 
@@ -118,21 +140,29 @@ public class MainActivity extends BaesActivity {
                 startActivity(new Intent(MainActivity.this, LoginActivity.class));
             }
         });
+        //我的关注的点击事件
+        guanzhu_liner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MyAttentionActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
     //fragment的隐藏的方法
-    public void Hined(){
-        if (recommendFragment!=null&&recommendFragment.isAdded()){
+    public void Hined() {
+        if (recommendFragment != null && recommendFragment.isAdded()) {
             getSupportFragmentManager().beginTransaction().hide(recommendFragment).commit();
         }
-        if (crosstalkFragment!=null&&crosstalkFragment.isAdded()){
+        if (crosstalkFragment != null && crosstalkFragment.isAdded()) {
             getSupportFragmentManager().beginTransaction().hide(crosstalkFragment).commit();
         }
-        if (videoFragment!=null&&videoFragment.isAdded()){
+        if (videoFragment != null && videoFragment.isAdded()) {
             getSupportFragmentManager().beginTransaction().hide(videoFragment).commit();
         }
-        if (attentionFragment!=null&&attentionFragment.isAdded()){
+        if (attentionFragment != null && attentionFragment.isAdded()) {
             getSupportFragmentManager().beginTransaction().hide(attentionFragment).commit();
         }
 

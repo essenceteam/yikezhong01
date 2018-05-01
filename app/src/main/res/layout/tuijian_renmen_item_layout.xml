@@ -58,19 +58,18 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             app:fab_addButtonSize="mini">
-
-            <com.getbase.floatingactionbutton.FloatingAc1tionButton
+            <com.getbase.floatingactionbutton.FloatingActionButton
                 android:id="@+id/floatList"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:fab_icon="@drawable/pinbi"
-                app:fab_size="mini" />
+                app:fab_icon="@drawable/copylink1"
+                app:fab_size="mini"/>
 
             <com.getbase.floatingactionbutton.FloatingActionButton
                 android:id="@+id/floatGrid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:fab_icon="@drawable/copylink1"
+                app:fab_icon="@drawable/pinbi"
                 app:fab_size="mini"/>
 
             <com.getbase.floatingactionbutton.FloatingActionButton

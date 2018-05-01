@@ -56,9 +56,11 @@ public class Tuijian_Video_baseadapter extends XRecyclerView.Adapter<Tuijian_Vid
             @Override
             public void onClick(View view) {
                int uid = list.get (position).getUid ();
+                String nickname = list.get (position).getUser ().getNickname ();
                 Intent Intent=new Intent (context, Tuijian_Xiangqing_Activity.class);
                 Intent.putExtra ("uid",uid+"");
                 Intent.putExtra ("img",icon);
+               // Intent.putExtra ("name",nickname);
                 context.startActivity (Intent);
             }
         });
