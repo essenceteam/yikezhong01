@@ -61,13 +61,8 @@
         <activity android:name="com.yongchun.library.view.ImageSelectorActivity" />
         <activity android:name="com.yongchun.library.view.ImagePreviewActivity" />
         <activity android:name="com.yongchun.library.view.ImageCropActivity" />
-<<<<<<< HEAD
         <activity android:name=".activity.Tuijian_Xiangqing_Activity"></activity>
         <activity android:name=".activity.MyAttentionActivity"></activity>
-
-=======
-        <activity android:name=".activity.MyAttentionActivity"></activity>
->>>>>>> 9cb4866bbb544658cbf6c128a3cede785df51f2d
     </application>
 
 </manifest>
