@@ -3,6 +3,7 @@ package com.example.liufan.xiangmu.shipin;
 import com.example.liufan.xiangmu.shipin.bean.HQSPBean;
 import com.example.liufan.xiangmu.shipin.bean.Video_FuJinBean;
 import com.example.liufan.xiangmu.shipin.bean.Video_ReMenBean;
+import com.example.liufan.xiangmu.shipin.bean.YongHuzpBean;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -29,5 +30,6 @@ public interface Video_Api_Service {
     //https://www.zhaoapi.cn/user/getUserInfo?source=android&appVersion=101&uid=1758
     //获取某个用户的作品列表
     //https://www.zhaoapi.cn/quarter/getUserVideos?source=android&appVersion=101&uid=1758&page=1
-    //
+    @GET("quarter/getUserVideos")
+    Observable<YongHuzpBean> getVideo_yonghuzp(@Query("source") String source,@Query("appVersion") String appVersion,@Query("uid") String uid,@Query("page") String page);
 }

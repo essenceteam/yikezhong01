@@ -59,6 +59,19 @@ public class Video_Presenter extends BaseVideo_Presenters<Video_OnView> {
         });
     }
 
+    public void getVideo_YongHuzp(String source, String appVersion, String uid , String page){
+        video_Modle.getYongHuzp(source, appVersion, uid, page, new Video_Moudle_hui() {
+            @Override
+            public void onError(String ss) {
+
+            }
+
+            @Override
+            public void onSuccess(Object object) {
+                v.onSuccess(object);
+            }
+        });
+    }
 
 
 }

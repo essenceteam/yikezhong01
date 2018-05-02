@@ -5,6 +5,7 @@ import com.example.liufan.xiangmu.shipin.Video_Api_Service;
 import com.example.liufan.xiangmu.shipin.bean.HQSPBean;
 import com.example.liufan.xiangmu.shipin.bean.Video_FuJinBean;
 import com.example.liufan.xiangmu.shipin.bean.Video_ReMenBean;
+import com.example.liufan.xiangmu.shipin.bean.YongHuzpBean;
 import com.example.liufan.xiangmu.util.RetrofitUtil;
 
 import io.reactivex.Observable;
@@ -58,7 +59,19 @@ public class Video_Modle {
                         video_moudle_hui.onSuccess(video_fuJinBean);
                     }
                 });
-
+    }
+    public void getYongHuzp(String source, String appVersion, String uid , String page, final Video_Moudle_hui video_moudle_hui){
+        RetrofitUtil inData = RetrofitUtil.getInData();
+        Video_Api_Service retrofit = inData.getRetrofit(API.Url, Video_Api_Service.class);
+        Observable<YongHuzpBean> video_yonghuzp = retrofit.getVideo_yonghuzp(source, appVersion, uid, page);
+        video_yonghuzp.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<YongHuzpBean>() {
+                    @Override
+                    public void accept(YongHuzpBean yongHuzpBean) throws Exception {
+                        video_moudle_hui.onSuccess(yongHuzpBean);
+                    }
+                });
     }
 
 }
